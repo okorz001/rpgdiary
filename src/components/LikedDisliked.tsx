@@ -20,16 +20,16 @@ function createList(name: string,  title: string) {
 export const LikedList = createList('LikedList', 'Liked')
 export const DislikedList = createList('DislikedList', 'Disliked')
 
-function createItem(name: string, marker: string) {
+function createItem(name: string, imageUrl: string) {
   return createComponent(name, (props: PropsWithChildren) => (
     <li className="my-1">
       <div className="absolute">
-        <span className="relative right-6">{marker}</span>
+        <img src={imageUrl} className="relative right-6 w-6" />
       </div>
       {props.children}
     </li>
   ))
 }
 
-export const LikedItem = createItem('LikedItem', '👍')
-export const DislikedItem = createItem('DislikedItem', '👎')
+export const LikedItem = createItem('LikedItem', '/assets/thumbs-up.svg')
+export const DislikedItem = createItem('DislikedItem', '/assets/thumbs-down.svg')

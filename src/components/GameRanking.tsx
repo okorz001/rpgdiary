@@ -54,7 +54,7 @@ export default function GameRanking(props: GameRankingProps) {
       return (
         <li key={it.slug}>
           <div className="absolute">
-            <span className="relative right-12">➡️</span>
+            <img src="/assets/pointing-right.svg" className="relative right-12 w-7" />
           </div>
           {it.title}
         </li>
