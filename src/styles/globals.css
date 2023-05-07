@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /*
+   * Set all parents of the layout to maximum height.
+   * This intentionally does *not* use h-screen due to behavior on iOS Safari.
+   */
+  html, body, #__next {
+      @apply h-full;
+  }
+
+  /* Set the document background color for iOS Safari.  */
+  body {
+      @apply bg-header;
+  }
+}

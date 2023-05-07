@@ -1,0 +1,8 @@
+# npm
+node_modules/
+# next
+.next/
+next-env.d.ts
+out/
+# mac os
+.DS_Store
