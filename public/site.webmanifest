@@ -1,6 +1,5 @@
 {
   "name": "RPG Diary",
-  "short_name": "RPG Diary",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -11,10 +10,12 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ],
-  "start_url": ".",
-  "theme_color": "black",
-  "background_color": "hsl(255, 30%, 20%)",
-  "display": "standalone"
+  ]
 }
