@@ -18,7 +18,7 @@ const LINKS = [
 export default function Layout(props: LayoutProps) {
   const [modal, setModal] = useState<ReactNode>(null)
 
-  let title = "RPGDiary"
+  let title = "RPG Diary"
   if (props.subtitle) {
     title = `${title}: ${props.subtitle}`
   }
