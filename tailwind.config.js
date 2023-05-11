@@ -23,7 +23,10 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-sans)', ...theme.fontFamily.sans],
         serif: ['var(--font-serif)', ...theme.fontFamily.serif],
-      }
+      },
+      gridTemplateColumns: {
+        ranking: 'max-content max-content',
+      },
     },
   },
   plugins: [],
