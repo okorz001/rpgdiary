@@ -45,14 +45,14 @@ export default function GameRanking(props: GameRankingProps) {
   }
 
   return (
-    <div className="my-4">
-      <div className="text-center font-bold">Most Enjoyed</div>
-      <ul className="grid grid-cols-list gap-2 justify-center text-xl font-serif">
+    <div className="grid grid-cols-list gap-2 justify-center my-4">
+      <div className="col-span-2 text-center font-bold">Most Enjoyed</div>
+      <ul className="contents text-xl font-serif">
         {moreBefore && createMoreItem()}
         {ranking.map((it, index) => createItem(it, index + start, props.game))}
         {moreAfter && createMoreItem()}
       </ul>
-      <div className="text-center font-bold">Least Enjoyed</div>
+      <div className="col-span-2 text-center font-bold">Least Enjoyed</div>
     </div>
   )
 }
@@ -61,7 +61,7 @@ function createItem(game: ArticleMeta, rank: number, selected: string) {
   let marker: ReactNode = `${rank}. `
   let value: ReactNode = game.title
   if (game.slug == selected) {
-    marker = <>➡️{marker}</>
+    marker = <>➡️ {marker}</>
   } else {
     value = <Link href={`/games/${game.slug}`}>{value}</Link>
   }
@@ -75,5 +75,5 @@ function createItem(game: ArticleMeta, rank: number, selected: string) {
 }
 
 function createMoreItem() {
-  return <li className="col-span-2 font-bold text-center">·&nbsp;·&nbsp;·</li>
+  return <li className="col-span-2 -my-1.5 font-bold text-center">·&nbsp;·&nbsp;·</li>
 }
