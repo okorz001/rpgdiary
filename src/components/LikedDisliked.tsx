@@ -12,7 +12,7 @@ function createList(name: string,  title: string) {
   return createComponent(name, (props: PropsWithChildren) => (
     <div className="w-[90%] xs:w-[80%] sm:w-[40%] mx-auto my-2 inline-block">
       <div className="font-bold text-lg text-center">{title}</div>
-      <ul className="ps-6">{props.children}</ul>
+      <ul className="grid grid-cols-list gap-2 justify-center ">{props.children}</ul>
     </div>
   ))
 }
@@ -22,11 +22,9 @@ export const DislikedList = createList('DislikedList', 'Disliked')
 
 function createItem(name: string, marker: string) {
   return createComponent(name, (props: PropsWithChildren) => (
-    <li className="my-1">
-      <div className="absolute">
-        <span className="relative right-6">{marker}</span>
-      </div>
-      {props.children}
+    <li className="contents">
+      <span className="text-right">{marker}</span>
+      <span>{props.children}</span>
     </li>
   ))
 }

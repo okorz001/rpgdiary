@@ -47,7 +47,7 @@ export default function GameRanking(props: GameRankingProps) {
   return (
     <div className="my-4">
       <div className="text-center font-bold">Most Enjoyed</div>
-      <ul className="mx-auto grid grid-cols-ranking gap-2 justify-center text-xl font-serif">
+      <ul className="grid grid-cols-list gap-2 justify-center text-xl font-serif">
         {moreBefore && createMoreItem()}
         {ranking.map((it, index) => createItem(it, index + start, props.game))}
         {moreAfter && createMoreItem()}

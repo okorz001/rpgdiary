@@ -25,7 +25,7 @@ module.exports = {
         serif: ['var(--font-serif)', ...theme.fontFamily.serif],
       },
       gridTemplateColumns: {
-        ranking: 'max-content max-content',
+        list: 'max-content minmax(min-content, max-content)',
       },
     },
   },
