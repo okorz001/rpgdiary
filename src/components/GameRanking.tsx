@@ -61,7 +61,7 @@ function createItem(game: ArticleMeta, rank: number, selected: string) {
   let marker: ReactNode = `${rank}. `
   let value: ReactNode = game.title
   if (game.slug == selected) {
-    marker = <>➡️ {marker}</>
+    marker = <>➡︎ {marker}</>
   } else {
     value = <Link href={`/games/${game.slug}`}>{value}</Link>
   }
