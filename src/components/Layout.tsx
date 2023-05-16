@@ -23,6 +23,7 @@ export default function Layout(props: LayoutProps) {
     title = `${title}: ${props.subtitle}`
   }
 
+  // TODO: maybe using grid + gap instead of flex + padding would simplify spacing
   return (
     <ModalContext.Provider value={{ setModal }}>
       <Head>
@@ -62,7 +63,7 @@ export default function Layout(props: LayoutProps) {
         </main>
 
         <footer className="flex-initial bg-header">
-          <div className="w-full md:w-[768px] mx-auto px-2 text-sm text-center">
+          <div className="w-full md:w-[768px] mx-auto -mt-1 px-2 pb-2 text-sm text-center">
             &copy;2023 Oscar Korz &mdash; All rights reserved
           </div>
         </footer>
