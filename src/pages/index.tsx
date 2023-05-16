@@ -1,34 +1,11 @@
-import sortBy from 'lodash/sortBy'
-import type { GetStaticProps } from 'next'
+import LatestPage, { getStaticProps as getLatestPageProps } from './page/[page]'
 
-import Article from '@/components/Article'
-import Layout from '@/components/Layout'
-import { RankingContext, type RankingContextType } from '@/components/RankingContext'
-import { getAllGameArticleMetas, getGameArticleData, getGameRanking, type ArticleData } from '@/lib/articles'
+// This is effectively a rewrite rule so that "/"" has the same contents as "/page/1".
+// Doing it this way still allows static HTML export without any janky redirects.
 
-type HomePageProps = {
-  articles: ArticleData[],
-  ranking: RankingContextType,
-}
+export default LatestPage
 
-export default function HomePage(props: HomePageProps) {
-  const articles = props.articles.map(it => <Article key={it.meta.slug} {...it} />)
-  return (
-    <Layout>
-      <RankingContext.Provider value={props.ranking}>
-        {articles}
-      </RankingContext.Provider>
-    </Layout>
-  )
-}
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  let articleMetas = await getAllGameArticleMetas()
-  // sort by date, newest first
-  articleMetas = sortBy(articleMetas, ['date'])
-  articleMetas.reverse()
-  const articles = await Promise.all(articleMetas.map(it => getGameArticleData(it.slug)))
-  const ranking = await getGameRanking()
-  const props = { articles, ranking }
-  return { props }
+export function getStaticProps() {
+  const params = { page: '1' }
+  return getLatestPageProps({ params })
 }

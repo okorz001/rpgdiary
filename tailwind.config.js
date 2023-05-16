@@ -26,6 +26,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         list: 'max-content minmax(min-content, max-content)',
+        pageNav: '2.5rem 2.5rem minmax(min-content, max-content) 2.5rem 2.5rem',
       },
     },
   },
