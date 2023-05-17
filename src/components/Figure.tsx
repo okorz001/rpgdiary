@@ -16,7 +16,7 @@ export default function Figure(props: FigureProps) {
     </div>
   )
   return (
-    <figure onClick={() => setModal(modal)} className="max-w-[200px] rounded-xl bg-figure">
+    <figure onClick={() => setModal(modal)} className="max-w-[200px] rounded-xl bg-figure/60">
       <img src={props.src} className="max-w-[200px] max-h-[200px]" />
       <figcaption className="text-center text-sm">{props.children}</figcaption>
     </figure>

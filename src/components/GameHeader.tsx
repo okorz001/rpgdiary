@@ -17,14 +17,12 @@ export default function GameHeader() {
 
   return (
     <div className="my-4 flex justify-evenly flex-col sm:flex-row">
-      <div className="m-2 self-center order-last sm:order-first">
-        <hr />
-        <table className="border-separate border-spacing-1">
+      <div className="m-2 self-center order-last sm:order-first rounded-xl bg-figure/60">
+        <table className="border-separate border-spacing-1.5">
           <tbody>
             {createRows({ title, ...data })}
           </tbody>
         </table>
-        <hr />
       </div>
       {(data.covers || []).map((it, i) => (
         <div key={i} className="m-2 self-center">
