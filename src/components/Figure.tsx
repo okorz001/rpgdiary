@@ -8,17 +8,16 @@ export type FigureProps = PropsWithChildren & {
 }
 
 export default function Figure(props: FigureProps) {
-  // TODO: click to toggle fullscreen modal
   const { setModal } = useContext(ModalContext)
   const modal = (
     <div className="h-full flex justify-center items-center">
-      <img src={props.src} className="max-w-[90%] max-h-[90%] object-contain" />
+      <img src={props.src} className="max-w-[90%] max-h-[90%]" />
     </div>
   )
   return (
-    <figure onClick={() => setModal(modal)} className="max-w-[200px] rounded-xl bg-figure/60">
-      <img src={props.src} className="max-w-[200px] max-h-[200px]" />
-      <figcaption className="text-center text-sm">{props.children}</figcaption>
+    <figure onClick={() => setModal(modal)} className="rounded-xl bg-figure/80 p-2">
+      <img src={props.src} className="max-w-figure max-h-figure mx-auto" />
+      <figcaption className="mt-1 -mb-1 text-center text-sm">{props.children}</figcaption>
     </figure>
   )
 }

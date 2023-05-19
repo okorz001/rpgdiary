@@ -2,7 +2,7 @@ import { createComponent, PropsWithChildren } from '@/components'
 
 export function LikedDisliked(props: PropsWithChildren) {
   return (
-    <div className="flex justify-evenly flex-col sm:flex-row -my-4">
+    <div className="m-4 grid grid-cols-liked1 sm:grid-cols-liked2 gap-4 sm:gap-8 justify-evenly">
       {props.children}
     </div>
   )
@@ -10,9 +10,9 @@ export function LikedDisliked(props: PropsWithChildren) {
 
 function createList(name: string,  title: string) {
   return createComponent(name, (props: PropsWithChildren) => (
-    <div className="w-[90%] xs:w-[80%] sm:w-[40%] mx-auto my-2 inline-block">
+    <div>
       <div className="font-bold text-lg text-center">{title}</div>
-      <ul className="grid grid-cols-list gap-2 justify-center ">{props.children}</ul>
+      <ul className="grid grid-cols-list gap-2">{props.children}</ul>
     </div>
   ))
 }

@@ -16,19 +16,19 @@ export default function GameHeader() {
   }
 
   return (
-    <div className="my-4 flex justify-evenly flex-col sm:flex-row">
-      <div className="m-2 self-center order-last sm:order-first rounded-xl bg-figure/60">
-        <table className="border-separate border-spacing-1.5">
-          <tbody>
-            {createRows({ title, ...data })}
-          </tbody>
-        </table>
-      </div>
-      {(data.covers || []).map((it, i) => (
-        <div key={i} className="m-2 self-center">
-          <Figure src={it.src}>{it.caption}</Figure>
+    <div className="my-4 flex flex-wrap-reverse gap-4 justify-center items-center">
+      <table className="border-separate border-spacing-2 rounded-xl bg-figure/80">
+        <tbody>
+          {createRows({ title, ...data })}
+        </tbody>
+      </table>
+      {data.covers && (
+        <div className="flex flex-wrap gap-4 justify-center items-center">
+          {data.covers.map((it, i) => (
+            <Figure key={i} src={it.src}>{it.caption}</Figure>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   )
 }

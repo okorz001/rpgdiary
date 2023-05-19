@@ -25,8 +25,22 @@ module.exports = {
         serif: ['var(--font-serif)', ...theme.fontFamily.serif],
       },
       gridTemplateColumns: {
+        liked1: 'minmax(min-content, max-content)',
+        liked2: 'repeat(2, minmax(min-content, max-content))',
         list: 'max-content minmax(min-content, max-content)',
         pageNav: '2.5rem 2.5rem minmax(min-content, max-content) 2.5rem 2.5rem',
+      },
+      maxHeight: {
+        figure: '200px',
+      },
+      maxWidth: {
+        figure: '200px',
+      },
+      minWidth: {
+        body: '280px',
+      },
+      width: {
+        card: '768px',
       },
     },
   },
