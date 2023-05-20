@@ -30,6 +30,9 @@ module.exports = {
         list: 'max-content minmax(min-content, max-content)',
         pageNav: '2.5rem 2.5rem minmax(min-content, max-content) 2.5rem 2.5rem',
       },
+      height: {
+        header: '48px',
+      },
       maxHeight: {
         figure: '200px',
       },
@@ -38,6 +41,13 @@ module.exports = {
       },
       minWidth: {
         body: '280px',
+      },
+      screens: {
+        // used to move nav links from dropdown to inside header
+        xs: '480px',
+      },
+      spacing: {
+        header: '48px',
       },
       width: {
         card: '768px',

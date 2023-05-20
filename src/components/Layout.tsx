@@ -17,6 +17,9 @@ const LINKS = [
 
 export default function Layout(props: LayoutProps) {
   const [modal, setModal] = useState<ReactNode>(null)
+  const [hasMenu, setHasMenu] = useState<boolean>(false)
+  const toggleMenu = () => setHasMenu(!hasMenu)
+  const hideMenu = () => setHasMenu(false)
 
   let title = "RPG Diary"
   if (props.subtitle) {
@@ -38,31 +41,35 @@ export default function Layout(props: LayoutProps) {
         <img src="/assets/abandoned-castle.jpg" className="w-full h-full object-cover blur-[2px] scale-[1.01]" />
       </div>
 
-      <div className="w-full h-full min-w-body flex flex-col text-primary font-sans">
+      <div className="w-full h-full min-w-body flex flex-col justify-start text-primary font-sans">
         {modal ? <Modal onClick={() => setModal(null)}>{modal}</Modal> : null}
 
-        <header className="flex-initial bg-header">
-          <div className="w-full md:w-card mx-auto px-2 py-2">
-            <h1 className="text-3xl font-serif text-center">RPG Diary</h1>
-            <p className="text-sm text-center">My personal feelings playing RPGs.</p>
+        <header className="fixed top-0 left-0 right-0 h-header bg-header">
+          <div className="w-full md:w-card mx-auto flex justify-between items-center px-4 py-1.5">
+            <div className="flex gap-1 items-end">
+              <img src="/assets/logo.svg" className="h-8" />
+              <h1 className="text-3xl font-serif">RPG&nbsp;Diary</h1>
+            </div>
+            <button onClick={() => setHasMenu(!hasMenu)} className="text-3xl px-4 xs:hidden">⋮</button>
+            <nav className={`
+              grid grid-flow-row divide-primary
+              ${hasMenu ? "max-xs:absolute" : "max-xs:hidden"} max-xs:top-12 max-xs:right-1 max-xs:bg-stone-950 max-xs:rounded-b-xl max-xs:divide-y
+              xs:grid-flow-col xs:divide-x
+            `}>
+              {LINKS.map(({ label, href }) => (
+                <Link key={label} href={href} onClick={() => setHasMenu(false)} className="font-bold uppercase px-4 py-4 xs:py-1.5">
+                  {label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </header>
 
-        <nav className="flex-initial bg-header">
-          <div className="flex justify-evenly w-full md:w-card mx-auto">
-            {LINKS.map(({ label, href }) => (
-              <Link key={label} href={href} className="flex-initial px-2 py-1 hover:bg-card/80 hover:text-white">
-                {label}
-              </Link>
-            ))}
-          </div>
-        </nav>
-
-        <main className="flex-auto w-full md:w-card mx-auto">
+        <main className="mt-header flex-auto w-full md:w-card mx-auto">
           {props.children}
         </main>
 
-        <footer className="flex-initial bg-header">
+        <footer className="bg-header">
           <div className="w-full md:w-card mx-auto -mt-1 px-2 pb-2 text-sm text-center">
             &copy;2023 Oscar Korz &mdash; All rights reserved
           </div>
