@@ -1,11 +1,11 @@
 import { type Metadata } from 'next'
 import { Figtree, Playfair_Display } from 'next/font/google'
 
+import '@/app/globals.css'
 import { PropsWithChildren } from '@/components'
 import Layout from '@/components/Layout'
 import { RankingContextProvider } from '@/components/RankingContext'
 import { getGameRanking } from '@/lib/articles'
-import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: {
