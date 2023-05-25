@@ -1,13 +1,10 @@
-import Head from 'next/head'
+'use client'
+
 import Link from 'next/link'
 import { useEffect, useState, type ReactNode } from 'react'
 
 import { PropsWithChildren } from '@/components'
 import { ModalContext } from '@/components/ModalContext'
-
-export type LayoutProps = PropsWithChildren & {
-  subtitle?: string
-}
 
 // TODO: hardcoding some links now for dev
 const LINKS = [
@@ -15,28 +12,15 @@ const LINKS = [
   { label: 'Ranking', href: '/ranking' },
 ]
 
-export default function Layout(props: LayoutProps) {
+export default function Layout(props: PropsWithChildren) {
   const [modal, setModal] = useState<ReactNode>(null)
   const [hasMenu, setHasMenu] = useState<boolean>(false)
   const toggleMenu = () => setHasMenu(!hasMenu)
   const hideMenu = () => setHasMenu(false)
 
-  let title = "RPG Diary"
-  if (props.subtitle) {
-    title = `${title}: ${props.subtitle}`
-  }
-
   // TODO: maybe using grid + gap instead of flex + padding would simplify spacing
   return (
     <ModalContext.Provider value={{ setModal }}>
-      <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
-
       <div className="w-screen h-screen fixed left-0 right-0 top-0 z-[-1]">
         <img src="/assets/abandoned-castle.jpg" className="w-full h-full object-cover blur-[2px] scale-[1.01]" />
       </div>

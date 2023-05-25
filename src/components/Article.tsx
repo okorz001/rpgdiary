@@ -1,3 +1,5 @@
+'use client'
+
 import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 import { PropsWithChildren } from '@/components'

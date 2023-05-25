@@ -85,5 +85,5 @@ export async function getGameRanking() {
       console.warn(`Missing meta for game: ${slug}`)
     }
     return result
-  }).filter(it => it)
+  }).filter(it => it) as ArticleMeta[]
 }

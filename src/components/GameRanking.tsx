@@ -1,3 +1,5 @@
+'use client'
+
 import { useContext, type ReactNode } from 'react'
 
 import Link from '@/components/Link'
@@ -18,7 +20,7 @@ export default function GameRanking(props: GameRankingProps) {
     // preserve historical ranking by filtering out games added after this game
     const game = ranking.find(it => it.slug == props.game)
     if (game) {
-      ranking = ranking.filter(it => it.date <= game.date)
+      ranking = ranking.filter(it => it.date && game.date && it.date <= game.date)
 
       // only show 5 items. preferably 2 before and 2 above.
       if (ranking.length > 5) {
@@ -57,7 +59,7 @@ export default function GameRanking(props: GameRankingProps) {
   )
 }
 
-function createItem(game: ArticleMeta, rank: number, selected: string) {
+function createItem(game: ArticleMeta, rank: number, selected?: string) {
   let marker: ReactNode = `${rank}. `
   let value: ReactNode = game.title
   if (game.slug == selected) {
