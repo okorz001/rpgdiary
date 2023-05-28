@@ -21,7 +21,7 @@ function getHref(page: number) {
 export async function generateStaticParams() {
   const slugs = await getGameSlugs()
   // generate a path for every page EXCEPT 1. "/" is used instead of "/pages/1"
-  return range(1, getNumPages(slugs))
+  return range(2, getNumPages(slugs) + 1)
     // next throws if it is not a string here
     .map(page => ({ page: page.toString() }))
 }
