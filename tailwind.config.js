@@ -2,23 +2,40 @@
 
 const theme = require('tailwindcss/defaultTheme')
 
+/** @param {string} name */
+function defineColor(name) {
+  return { [name]: `rgb(var(--color-${name}) / <alpha-value>)` }
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./src/app/**/*.tsx",
     "./src/components/**/*.tsx",
-    "./src/pages/**/*.tsx",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        wallpaper: 'url(/assets/abandoned-castle.jpg)',
-      },
+      // material-ish theme
       colors: {
-        header: 'black',
-        card: 'hsl(255, 30%, 20%)',
-        primary: 'hsl(186, 94%, 82%)',
-        secondary: 'hsl(0, 91%, 71%)',
-        figure: 'hsl(0, 0%, 5%)',
+        primary: 'hsl(189, 100%, 25%)',
+        primaryContrast: 'hsl(0, 0%, 100%)',
+        secondary: 'hsl(28, 95%, 45%)',
+        secondaryContrast: 'hsl(0, 0%, 0%)',
+        tertiary: 'hsl(38, 80%, 60%)',
+        tertiaryContrast: 'hsl(0, 0%, 0%)',
+        background: {
+          DEFAULT: 'hsl(0, 0%, 90%)',
+          dark: 'hsl(0, 0%, 10%)',
+        },
+        paper: {
+          DEFAULT: 'hsl(0, 0%, 95%)',
+          dark: 'hsl(0, 0%, 15%)',
+        },
+        text: {
+          DEFAULT: 'hsl(0, 0%, 0%)',
+          dark: 'hsl(0, 0%, 100%)',
+        },
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...theme.fontFamily.sans],
@@ -30,28 +47,27 @@ module.exports = {
         list: 'max-content minmax(min-content, max-content)',
         pageNav: '2.5rem 2.5rem minmax(min-content, max-content) 2.5rem 2.5rem',
       },
-      height: {
-        header: '48px',
+      gridTemplateRows: {
+        layout: 'max-content 1fr max-content',
       },
       maxHeight: {
         figure: '200px',
       },
       maxWidth: {
+        main: '768px',
         figure: '200px',
       },
       minWidth: {
         body: '280px',
       },
       screens: {
-        // used to move nav links from dropdown to inside header
-        xs: '480px',
+        // nb = navbar, at this width links are moved from dropdown into navbar itself
+        nb: '480px',
       },
-      spacing: {
-        header: '48px',
-      },
-      width: {
-        card: '768px',
-      },
+      zIndex: {
+        // default 0
+        modal: '1',
+      }
     },
   },
   plugins: [],

@@ -12,14 +12,16 @@ export default function PageNav(props: PageNavProps) {
     let inner = <></>
     if (to >= 1 && to <= count && to != page) {
       inner = <Link href={getHref(to)}>{label}</Link>
+    } else {
+      inner = <span className="text-text/30 dark:text-text-dark/30">{label}</span>
     }
     return <div className="text-center text-xl -my-1">{inner}</div>
   }
   return (
-    <nav className="mx-2 my-4 p-2 rounded-2xl bg-card/80 grid grid-cols-pageNav justify-center items-center">
+    <nav className="px-2 py-2 grid grid-cols-pageNav justify-center items-center">
       {createLink(1, '<<')}
       {createLink(page - 1, '<')}
-      <div className="px-2">Page {page} of {count}</div>
+      <div className="px-2 text-sm">Page {page} of {count}</div>
       {createLink(page + 1, '>')}
       {createLink(count, '>>')}
     </nav>

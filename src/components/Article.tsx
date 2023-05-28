@@ -35,11 +35,9 @@ const components = {
 
 export default function Article(props: ArticleData) {
   return (
-    <article className="mx-2 my-4 p-2 rounded-2xl bg-card/80">
-      <div>
-        {props.meta.date ? <div className="mb-1 text-xs">{props.meta.date}</div> : null}
-        <h2 className="text-3xl text-center font-serif">{props.meta.title}</h2>
-      </div>
+    <article className="px-2 py-2">
+      {props.meta.date && <div className="mb-1 text-xs">{props.meta.date}</div>}
+      <h2 className="text-3xl text-center font-serif">{props.meta.title}</h2>
       <ArticleMetaContext.Provider value={props.meta}>
         <MDXRemote components={components} {...props.mdxProps} />
       </ArticleMetaContext.Provider>

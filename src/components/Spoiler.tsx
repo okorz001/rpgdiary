@@ -8,10 +8,9 @@ export default function Spoiler(props: PropsWithChildren) {
   const [visible, setVisible] = useState(false)
   const toggleClick = () => setVisible(!visible)
   return (
-    <span
-      className={visible ? "bg-black text-white" : "bg-black text-black"}
-      onClick={toggleClick}
-    >
+    <span onClick={toggleClick} className={`
+      cursor-pointer transition-colors ease-in bg-black ${visible ? 'text-white/80' : 'text-black'}
+    `}>
       {props.children}
     </span>
   )

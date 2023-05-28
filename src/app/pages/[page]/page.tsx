@@ -52,6 +52,7 @@ export default async function LatestPage({ params }) {
 
   return (
     <>
+      <PageNav page={page} count={numPages} getHref={getHref} />
       {articles}
       <PageNav page={page} count={numPages} getHref={getHref} />
     </>
