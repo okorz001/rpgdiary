@@ -1,6 +1,6 @@
 'use client'
 
-import { MDXRemote, type MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { MDXRemote } from 'next-mdx-remote'
 
 import { PropsWithChildren } from '@/components'
 import { ArticleMetaContext } from '@/components/ArticleMetaContext'
