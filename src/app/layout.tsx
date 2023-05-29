@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     template: '%s - RPG Diary',
   },
   manifest: '/site.webmanifest',
+  description: 'My personal experiences playing RPGs',
 }
 
 const fontSans = Figtree({

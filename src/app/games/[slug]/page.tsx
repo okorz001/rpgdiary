@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
   const article = await getGameArticleData(params.slug)
   return {
     title: article.meta.title,
+    description: `My personal experiences playing ${article.meta.title}`,
   } as Metadata
 }
 
