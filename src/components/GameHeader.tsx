@@ -27,7 +27,7 @@ export default function GameHeader() {
       {data.covers && (
         <div className="flex flex-wrap gap-4 justify-center items-center">
           {data.covers.map((it, i) => (
-            <Figure key={i} src={it.src} alt={`${title}: ${it.caption}`}>{it.caption}</Figure>
+            <Figure key={i} image={it.image} alt={`${title}: ${it.caption}`}>{it.caption}</Figure>
           ))}
         </div>
       )}
