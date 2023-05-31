@@ -6,6 +6,7 @@ import { PropsWithChildren } from '@/components'
 import { ArticleMetaContext } from '@/components/ArticleMetaContext'
 import Figure from '@/components/Figure'
 import GameHeader from '@/components/GameHeader'
+import GameLink from '@/components/GameLink'
 import GameRanking from '@/components/GameRanking'
 import { LikedDisliked, LikedList, LikedItem, DislikedList, DislikedItem } from '@/components/LikedDisliked'
 import Link from '@/components/Link'
@@ -23,6 +24,7 @@ const components = {
   // custom components
   Figure,
   GameHeader,
+  GameLink,
   GameRanking,
   Spoiler,
   // liked/disliked lists

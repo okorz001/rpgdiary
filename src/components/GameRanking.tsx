@@ -2,7 +2,7 @@
 
 import { useContext, type ReactNode } from 'react'
 
-import Link from '@/components/Link'
+import GameLink from '@/components/GameLink'
 import { RankingContext } from '@/components/RankingContext'
 import { type ArticleMeta } from '@/lib/articles'
 
@@ -65,7 +65,7 @@ function createItem(game: ArticleMeta, rank: number, selected?: string) {
   if (game.slug == selected) {
     marker = <>➡︎ {marker}</>
   } else {
-    value = <Link href={`/games/${game.slug}`}>{value}</Link>
+    value = <GameLink slug={game.slug} />
   }
 
   return (
