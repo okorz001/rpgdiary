@@ -1,22 +1,24 @@
 'use client'
 
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 
 import { type PropsWithChildren } from '@/components'
 import { type ArticleMeta } from '@/lib/articles'
 
-export type RankingContextType = ArticleMeta[]
-
-export const RankingContext = createContext<RankingContextType>([])
+const RankingContext = createContext<ArticleMeta[]>([])
 
 type RankingProviderProps = PropsWithChildren & {
-  ranking: RankingContextType
+  ranking: ArticleMeta[]
 }
 
-export function RankingContextProvider(props: RankingProviderProps) {
+export default function RankingProvider(props: RankingProviderProps) {
   return (
     <RankingContext.Provider value={props.ranking}>
       {props.children}
     </RankingContext.Provider>
   )
+}
+
+export function useRanking() {
+  return useContext(RankingContext)
 }

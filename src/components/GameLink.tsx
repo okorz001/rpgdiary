@@ -1,15 +1,13 @@
-import { useContext } from 'react'
-
 import { PropsWithChildren } from '@/components'
 import Link from '@/components/Link'
-import { RankingContext } from '@/components/RankingContext'
+import { useRanking } from '@/components/RankingProvider'
 
 type GameLinkProps = PropsWithChildren & {
   slug: string
 }
 
 export default function GameLink(props: GameLinkProps) {
-  const ranking = useContext(RankingContext)
+  const ranking = useRanking()
   const game = ranking.find(it => it.slug == props.slug)
   if (!game) {
     throw new Error(`Unknown slug: ${props.slug}`)

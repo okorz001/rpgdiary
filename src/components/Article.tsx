@@ -3,7 +3,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 
 import { PropsWithChildren } from '@/components'
-import { ArticleMetaContext } from '@/components/ArticleMetaContext'
+import ArticleMetaProvider from '@/components/ArticleMetaProvider'
 import Figure from '@/components/Figure'
 import GameHeader from '@/components/GameHeader'
 import GameLink from '@/components/GameLink'
@@ -41,9 +41,9 @@ export default function Article(props: ArticleData) {
     <article className="px-2 py-2">
       {date && <div className="mb-1 text-xs">{date}</div>}
       <h2 className="text-3xl text-center font-serif">{props.meta.title}</h2>
-      <ArticleMetaContext.Provider value={props.meta}>
+      <ArticleMetaProvider meta={props.meta}>
         <MDXRemote components={components} {...props.mdxProps} />
-      </ArticleMetaContext.Provider>
+      </ArticleMetaProvider>
     </article>
   )
 }

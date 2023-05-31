@@ -4,7 +4,7 @@ import { Figtree, Playfair_Display } from 'next/font/google'
 import '@/app/globals.css'
 import { PropsWithChildren } from '@/components'
 import NavBar from '@/components/NavBar'
-import { RankingContextProvider } from '@/components/RankingContext'
+import RankingProvider from '@/components/RankingProvider'
 import { getGameRanking } from '@/lib/articles'
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default async function RootLayout(props: PropsWithChildren) {
         w-full min-w-body min-h-full grid grid-rows-layout
         bg-background text-text/80 dark:bg-background-dark dark:text-text-dark/80 font-sans ${fontClasses}
       `}>
-        <RankingContextProvider ranking={ranking}>
+        <RankingProvider ranking={ranking}>
           <NavBar />
           <main className="w-full max-w-main mx-auto bg-paper dark:bg-paper-dark divide-y divide-text/20 dark:divide-text-dark/20">
             {props.children}
@@ -53,7 +53,7 @@ export default async function RootLayout(props: PropsWithChildren) {
               &copy;2023 Oscar Korz &mdash; All rights reserved
             </footer>
           </main>
-        </RankingContextProvider>
+        </RankingProvider>
       </body>
     </html>
   )

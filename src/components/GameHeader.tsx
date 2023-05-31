@@ -1,14 +1,12 @@
 'use client'
 
-import { useContext } from 'react'
-
-import { ArticleMetaContext } from '@/components/ArticleMetaContext'
+import { useArticleMeta } from '@/components/ArticleMetaProvider'
 import Figure from '@/components/Figure'
 
 export default function GameHeader() {
-  const meta = useContext(ArticleMetaContext)
+  const meta = useArticleMeta()
   if (!meta) {
-    return null
+    throw new Error('ArticleMeta is required')
   }
 
   // TODO: define type for data in game articles

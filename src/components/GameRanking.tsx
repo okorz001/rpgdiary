@@ -1,9 +1,7 @@
 'use client'
 
-import { useContext, type ReactNode } from 'react'
-
 import GameLink from '@/components/GameLink'
-import { RankingContext } from '@/components/RankingContext'
+import { useRanking } from '@/components/RankingProvider'
 import { type ArticleMeta } from '@/lib/articles'
 
 export type GameRankingProps = {
@@ -11,7 +9,7 @@ export type GameRankingProps = {
 }
 
 export default function GameRanking(props: GameRankingProps) {
-  let ranking = useContext(RankingContext)
+  let ranking = useRanking()
   let start = 1
   let moreBefore = false
   let moreAfter = false
@@ -60,18 +58,10 @@ export default function GameRanking(props: GameRankingProps) {
 }
 
 function createItem(game: ArticleMeta, rank: number, selected?: string) {
-  let marker: ReactNode = `${rank}. `
-  let value: ReactNode = game.title
-  if (game.slug == selected) {
-    marker = <>➡︎ {marker}</>
-  } else {
-    value = <GameLink slug={game.slug} />
-  }
-
   return (
     <li key={game.slug} className="contents">
-      <span className="text-right">{marker}</span>
-      <span>{value}</span>
+      <span className="text-right">{game.slug == selected && '➡︎'} {`${rank}. `}</span>
+      <span>{game.slug == selected ? game.title : <GameLink slug={game.slug} />}</span>
     </li>
   )
 }
