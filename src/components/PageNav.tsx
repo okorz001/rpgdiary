@@ -18,7 +18,10 @@ export default function PageNav(props: PageNavProps) {
     return <div className="text-center text-xl -my-1">{inner}</div>
   }
   return (
-    <nav className="px-2 py-2 grid grid-cols-pageNav justify-center items-center">
+    <nav className={`
+      sticky bottom-0 px-2 py-2 bg-inherit
+      grid grid-cols-pageNav justify-center items-center
+    `}>
       {createLink(1, '<<')}
       {createLink(page - 1, '<')}
       <div className="px-2 text-sm">Page {page} of {count}</div>
