@@ -33,13 +33,13 @@ const fontClasses = fonts.map(it => it.variable).join(' ')
 
 export default async function RootLayout(props: PropsWithChildren) {
   const ranking = await getGameRanking()
-  // TODO: allow toggling dark mode
   return (
-    <html lang="en" className="h-full dark">
+    <html lang="en" className="h-full">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="color-scheme" content="dark light" />
       </head>
       <body className={`
         w-full min-w-body min-h-full grid grid-rows-layout

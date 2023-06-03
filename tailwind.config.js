@@ -13,7 +13,6 @@ module.exports = {
     "./src/app/**/*.tsx",
     "./src/components/**/*.tsx",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       // material-ish theme
