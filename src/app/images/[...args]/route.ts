@@ -91,7 +91,9 @@ export async function GET(_, { params }) {
     data = await image.toBuffer()
   }
 
-  return new Response(data)
+  // Content-Type doesn't matter for static export, but seems to help for dev
+  const contentType = CONTENT_TYPES[args.output]
+  return new Response(data, { headers: { 'Content-Type': contentType }})
 }
 
 function parseArgs(params: string[]) {
@@ -147,4 +149,10 @@ const outputs: {
 } = {
   png: image => image.png(),
   webp: image => image.webp(),
+}
+
+const CONTENT_TYPES = {
+  png: 'image/png',
+  svg: 'image/svg+xml',
+  webp: 'image/webp',
 }
