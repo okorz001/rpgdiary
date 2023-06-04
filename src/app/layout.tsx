@@ -36,9 +36,11 @@ export default async function RootLayout(props: PropsWithChildren) {
   return (
     <html lang="en" className="h-full">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/favicon.svg/raw.svg" type="image/svg+xml" sizes="any" />
+        <link rel="icon" href="/images/favicon.svg/favicon48.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/images/favicon.svg/favicon32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/images/favicon.svg/favicon16.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/images/icon.svg/appleTouchIcon.png" />
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className={`

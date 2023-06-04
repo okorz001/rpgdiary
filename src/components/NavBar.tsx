@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -18,7 +19,7 @@ export default function NavBar() {
     <header className="sticky top-0 w-full drop-shadow-xl bg-primary text-primaryContrast">
       <div className="w-full max-w-main mx-auto flex justify-between items-center px-4 py-1.5">
         <Link href="/" className="-mt-0.5 mb-0.5 flex gap-1 items-end">
-          <img width="32" height="32" src="/assets/logo.svg" alt="RPG Diary logo" />
+          <Image priority width="32" height="32" src="/images/icon.svg/raw.svg" alt="RPG Diary icon" />
           <h1 className="text-3xl font-serif">RPG&nbsp;Diary</h1>
         </Link>
         <button onClick={toggleMenu} className="text-3xl px-4 nb:hidden">⋮</button>
