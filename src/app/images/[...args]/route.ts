@@ -9,7 +9,7 @@ import { getAllGameArticleMetas } from '@/lib/articles'
 const IMAGES_DIR = path.resolve(process.cwd(), 'src/data/images')
 
 export async function generateStaticParams() {
-  const params = await Promise.all([getFaviconParams(), getAppIconParams(), getCoverParams()])
+  const params = await Promise.all([getFaviconParams(), getAppIconParams(), getCoverParams(), getExtraImageParams()])
   return params.flatMap(it => it)
 }
 
@@ -53,6 +53,15 @@ async function getCoverParams() {
         return { args: [...path, preset] }
       })
     })
+  })
+}
+
+const EXTRA_IMAGES = ['gaspar.png', 'kefka.png']
+
+function getExtraImageParams() {
+  return EXTRA_IMAGES.map(image => {
+    const path = image.split('/')
+    return { args: [...path, 'full.webp'] }
   })
 }
 
