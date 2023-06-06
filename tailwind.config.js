@@ -24,11 +24,11 @@ module.exports = {
         tertiary: 'hsl(38, 80%, 60%)',
         tertiaryContrast: 'hsl(0, 0%, 0%)',
         background: {
-          DEFAULT: 'hsl(0, 0%, 90%)',
+          DEFAULT: 'hsl(0, 0%, 95%)',
           dark: 'hsl(0, 0%, 10%)',
         },
         paper: {
-          DEFAULT: 'hsl(0, 0%, 95%)',
+          DEFAULT: 'hsl(0, 0%, 100%)',
           dark: 'hsl(0, 0%, 15%)',
         },
         text: {
