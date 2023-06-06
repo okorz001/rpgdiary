@@ -15,7 +15,12 @@ export default function Figure(props: FigureProps) {
   return (
     <>
       <figure onClick={() => enableModal(true)} className="cursor-pointer rounded-xl bg-tertiary/30 p-2">
-        <img src={`/images/${props.image}/figure.webp`} alt={props.alt} className="max-w-figure max-h-figure mx-auto" />
+        <img
+          loading="lazy"
+          src={`/images/${props.image}/figure.webp`}
+          alt={props.alt}
+          className="max-w-figure max-h-figure mx-auto"
+        />
         <figcaption className="mt-1 -mb-1 text-center text-sm">{props.children}</figcaption>
       </figure>
       {modal && (
