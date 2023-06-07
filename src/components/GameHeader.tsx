@@ -17,7 +17,7 @@ export default function GameHeader() {
 
   return (
     <div className="my-4 flex flex-wrap-reverse gap-4 justify-center items-center">
-      <table className="border-separate border-spacing-2 rounded-xl bg-tertiary/30">
+      <table className="border-separate border-spacing-2 rounded-xl bg-tertiary">
         <tbody>
           {createRows({ title, ...data })}
         </tbody>

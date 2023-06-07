@@ -14,7 +14,7 @@ export default function Figure(props: FigureProps) {
   const [modal, enableModal] = useState(false)
   return (
     <>
-      <figure onClick={() => enableModal(true)} className="cursor-pointer rounded-xl bg-tertiary/30 p-2">
+      <figure onClick={() => enableModal(true)} className="cursor-pointer rounded-xl bg-tertiary p-2">
         <img
           loading="lazy"
           src={`/images/${props.image}/figure.webp`}

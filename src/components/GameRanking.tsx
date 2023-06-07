@@ -45,7 +45,7 @@ export default function GameRanking(props: GameRankingProps) {
   }
 
   return (
-    <div className="grid grid-cols-list gap-2 justify-center my-4">
+    <div className="w-fit min-w-[60%] mx-auto my-4 p-2 rounded-xl bg-tertiary grid grid-cols-list gap-2 justify-center">
       <div className="col-span-2 text-center font-bold">Most Enjoyed</div>
       <ul className="contents text-xl font-serif">
         {moreBefore && createMoreItem()}

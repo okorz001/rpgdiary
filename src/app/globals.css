@@ -7,9 +7,9 @@
   :root {
     --color-primary: 189 100% 25%;
     --color-primaryContrast: 0 0% 100%;
-    --color-secondary: 28 95% 45%;
+    --color-secondary: 18 85% 40%;
     --color-secondaryContrast: 0 0% 0%;
-    --color-tertiary: 38 80% 60%;
+    --color-tertiary: 259 60% 95%;
     --color-tertiaryContrast: 0 0% 0%;
     --color-background: 0 0% 95%;
     --color-paper: 0 0% 100%;
@@ -19,6 +19,8 @@
   /* dark theme overrides */
   @media (prefers-color-scheme: dark) {
     :root {
+      --color-secondary: 28 95% 50%;
+      --color-tertiary: 259 12.5% 20%;
       --color-background: 0 0% 10%;
       --color-paper: 0 0% 15%;
       --color-text: 0 0% 100%;
