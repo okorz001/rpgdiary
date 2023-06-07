@@ -17,24 +17,15 @@ module.exports = {
     extend: {
       // material-ish theme
       colors: {
-        primary: 'hsl(189, 100%, 25%)',
-        primaryContrast: 'hsl(0, 0%, 100%)',
-        secondary: 'hsl(28, 95%, 45%)',
-        secondaryContrast: 'hsl(0, 0%, 0%)',
-        tertiary: 'hsl(38, 80%, 60%)',
-        tertiaryContrast: 'hsl(0, 0%, 0%)',
-        background: {
-          DEFAULT: 'hsl(0, 0%, 95%)',
-          dark: 'hsl(0, 0%, 10%)',
-        },
-        paper: {
-          DEFAULT: 'hsl(0, 0%, 100%)',
-          dark: 'hsl(0, 0%, 15%)',
-        },
-        text: {
-          DEFAULT: 'hsl(0, 0%, 0%)',
-          dark: 'hsl(0, 0%, 100%)',
-        },
+        primary: 'hsl(var(--color-primary))',
+        primaryContrast: 'hsl(var(--color-primaryContrast))',
+        secondary: 'hsl(var(--color-secondary))',
+        secondaryContrast: 'hsl(var(--color-secondaryContrast))',
+        tertiary: 'hsl(var(--color-tertiary))',
+        tertiaryContrast: 'hsl(var(--color-tertiaryContrast))',
+        background: 'hsl(var(--color-background))',
+        paper: 'hsl(var(--color-paper))',
+        text: 'hsl(var(--color-text))',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...theme.fontFamily.sans],

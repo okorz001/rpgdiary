@@ -13,7 +13,7 @@ export default function PageNav(props: PageNavProps) {
     if (to >= 1 && to <= count && to != page) {
       inner = <Link href={getHref(to)}>{label}</Link>
     } else {
-      inner = <span className="text-text/30 dark:text-text-dark/30">{label}</span>
+      inner = <span className="text-text/30">{label}</span>
     }
     return <div className="text-center text-xl -my-1">{inner}</div>
   }

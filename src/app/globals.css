@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* define theme in HSL values */
+  :root {
+    --color-primary: 189 100% 25%;
+    --color-primaryContrast: 0 0% 100%;
+    --color-secondary: 28 95% 45%;
+    --color-secondaryContrast: 0 0% 0%;
+    --color-tertiary: 38 80% 60%;
+    --color-tertiaryContrast: 0 0% 0%;
+    --color-background: 0 0% 95%;
+    --color-paper: 0 0% 100%;
+    --color-text: 0 0% 0%;
+  }
+
+  /* dark theme overrides */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background: 0 0% 10%;
+      --color-paper: 0 0% 15%;
+      --color-text: 0 0% 100%;
+    }
+  }
+}

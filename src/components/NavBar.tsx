@@ -24,10 +24,9 @@ export default function NavBar() {
         <button onClick={toggleMenu} className="text-3xl px-4 nb:hidden">⋮</button>
         <nav className={`
           grid grid-flow-col divide-x divide-y-0 divide-primaryContrast/40
-            max-nb:grid-flow-row max-nb:divide-x-0 max-nb:divide-y max-nb:divide-text/20 max-nb:dark:divide-text-dark/20
+            max-nb:grid-flow-row max-nb:divide-x-0 max-nb:divide-y max-nb:divide-text/20
           ${hasMenu ? 'max-nb:absolute' : 'max-nb:hidden'} max-nb:top-12 max-nb:right-4 max-nb:min-w-[160px]
-            max-nb:border-b-2 max-nb:border-x-2 max-nb:border-text/20 max-nb:dark:border-text-dark/20
-            max-nb:bg-paper max-nb:text-text/80 max-nb:dark:bg-paper-dark max-nb:dark:text-text-dark/80
+            max-nb:border-b-2 max-nb:border-x-2 max-nb:border-text/20 max-nb:bg-paper max-nb:text-text/80
         `}>
           {createLink('Latest', '/')}
           {createLink('Ranking', '/ranking')}

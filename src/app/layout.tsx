@@ -45,11 +45,11 @@ export default async function RootLayout(props: PropsWithChildren) {
       </head>
       <body className={`
         w-full min-w-body min-h-full grid grid-rows-layout
-        bg-background text-text/80 dark:bg-background-dark dark:text-text-dark/80 font-sans ${fontClasses}
+        bg-background text-text/80 font-sans ${fontClasses}
       `}>
         <RankingProvider ranking={ranking}>
           <NavBar />
-          <main className="w-full max-w-main mx-auto bg-paper dark:bg-paper-dark divide-y divide-text/20 dark:divide-text-dark/20">
+          <main className="w-full max-w-main mx-auto bg-paper divide-y divide-text/20">
             {props.children}
             <footer className="w-full max-w-main mx-auto text-sm text-center p-2">
               &copy;2023 Oscar Korz &mdash; All rights reserved
