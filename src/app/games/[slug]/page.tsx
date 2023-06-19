@@ -1,24 +1,37 @@
 import { type Metadata } from 'next'
 
-import Article from '@/components/Article'
-import { getGameArticleData, getGameSlugs } from '@/lib/articles'
+import { getGameArticle, getGameInfo, getGameName, getGameRanking, getGameSlugs } from '@/lib/games'
 
-// TODO: how to typehint the params?
-
-export async function generateStaticParams() {
-  const slugs = await getGameSlugs()
-  return slugs.map(slug => ({ slug }))
+type PageParams = {
+  slug: string
 }
 
-export async function generateMetadata({ params }) {
-  const article = await getGameArticleData(params.slug)
+// TODO: Does Next define a type for this?
+type PageContext = {
+  params: PageParams
+}
+
+export function generateStaticParams(): PageParams[] {
+  return getGameSlugs().map(slug => ({ slug }))
+}
+
+export function generateMetadata({ params }: PageContext): Metadata {
+  const game = getGameInfo(params.slug)
+  const title = getGameName(game)
   return {
-    title: article.meta.title,
-    description: `My personal experiences playing ${article.meta.title}`,
-  } as Metadata
+    title,
+    description: `My personal experiences playing ${title}`,
+  }
 }
 
-export default async function GamePage({ params }) {
-  const article = await getGameArticleData(params.slug)
-  return <Article {...article} />
+export default function GamePage({ params }: PageContext) {
+  const { slug } = params
+  const game = getGameInfo(slug)
+  const title = getGameName(game)
+
+  const ranking = getGameRanking()
+  const date = ranking.find(it => it.slug == slug)?.date
+
+  const MDXContent = getGameArticle(slug)
+  return <MDXContent date={date} title={title} slug={slug} game={game} />
 }

@@ -1,15 +1,12 @@
-'use client'
-
 import GameLink from '@/components/GameLink'
-import { useRanking } from '@/components/RankingProvider'
-import { type ArticleMeta } from '@/lib/articles'
+import { getGameInfo, getGameName, getGameRanking, type GameRanking } from '@/lib/games'
 
 export type GameRankingProps = {
   game?: string
 }
 
 export default function GameRanking(props: GameRankingProps) {
-  let ranking = useRanking()
+  let ranking = getGameRanking()
   let start = 1
   let moreBefore = false
   let moreAfter = false
@@ -57,11 +54,12 @@ export default function GameRanking(props: GameRankingProps) {
   )
 }
 
-function createItem(game: ArticleMeta, rank: number, selected?: string) {
+function createItem(game: GameRanking, rank: number, selected?: string) {
+  const name = getGameName(getGameInfo(game.slug))
   return (
     <li key={game.slug} className="contents">
       <span className="text-right">{game.slug == selected && '➡︎'} {`${rank}. `}</span>
-      <span>{game.slug == selected ? game.title : <GameLink slug={game.slug} />}</span>
+      <span>{game.slug == selected ? name : <GameLink slug={game.slug} />}</span>
     </li>
   )
 }

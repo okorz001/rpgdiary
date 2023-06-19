@@ -10,8 +10,7 @@ function defineColor(name) {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/app/**/*.tsx",
-    "./src/components/**/*.tsx",
+    "./src/**/*.tsx",
   ],
   theme: {
     extend: {

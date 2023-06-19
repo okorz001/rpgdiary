@@ -1,27 +1,8 @@
----
-title: "Final Fantasy\xA0XIII-2"
-date: '2023-06-03'
-data:
-  year: 2011
-  yearNotes: 'US: 2012'
-  system: |
-    PS3
-    Xbox 360
-  developer: |
-    Square Enix
-    tri-Ace
-  publisher: Square Enix
-  covers:
-  - image: final_fantasy_xiii_2/cover-us.png
-    caption: US Cover
-  - image: final_fantasy_xiii_2/cover-jp.jpg
-    caption: Japan Cover
----
 Although I am a big fan of Final Fantasy, I was very skeptical of Final Fantasy&nbsp;XIII-2 &mdash; I didn't like
 <GameLink slug="final_fantasy_xiii" /> and I _really_ did not like <GameLink slug="final_fantasy_x_2">the only other
 direct sequel</GameLink> in the series. Did this game exceed my expectations?
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Despite the abrupt and confusing introduction, I enjoyed the plot in this game. Caius is a solid antagonist which is
 something that I thought the previous game was missing. The main story is a little short, but I really enjoyed the
@@ -72,6 +53,6 @@ those I most enjoyed to those I least enjoyed. I was pleasantly surprised by thi
 game ended so quickly. It's not a top tier Final Fantasy, but I think I enjoyed it more than
 <GameLink slug="final_fantasy_iv" />.
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />
 
 <small>P.S. It's been a year to the date since <GameLink slug="final_fantasy">my first entry</GameLink>!</small>

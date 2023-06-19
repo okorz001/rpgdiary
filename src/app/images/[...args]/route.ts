@@ -3,10 +3,10 @@ import path from 'node:path'
 
 import sharp from 'sharp'
 
-import { getAllGameArticleMetas } from '@/lib/articles'
+import { getGameInfos } from '@/lib/games'
 
 // during next build, process.cwd() is the repository directory
-const IMAGES_DIR = path.resolve(process.cwd(), 'src/data/images')
+const IMAGES_DIR = path.resolve(process.cwd(), 'data/images')
 
 export async function generateStaticParams() {
   const params = await Promise.all([getFaviconParams(), getAppIconParams(), getCoverParams(), getExtraImageParams()])
@@ -45,9 +45,9 @@ function getAppIconParams() {
 const COVER_PRESETS = ['full.webp', 'figure.webp']
 
 async function getCoverParams() {
-  const articleMetas = await getAllGameArticleMetas()
-  return articleMetas.flatMap(article => {
-    return (article.data?.covers || []).flatMap(cover => {
+  const gameInfos = getGameInfos()
+  return Object.values(gameInfos).flatMap(article => {
+    return (article.covers || []).flatMap(cover => {
       const path = cover.image.split('/')
       return COVER_PRESETS.map(preset => {
         return { args: [...path, preset] }

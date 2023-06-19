@@ -1,24 +1,10 @@
----
-title: "Final Fantasy\xA0XII"
-date: '2023-04-02'
-data:
-  year: 2006
-  system: PS2
-  developer: Square Enix
-  publisher: Square Enix
-  covers:
-  - image: final_fantasy_xii/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_xii/cover-jp.jpg
-    caption: Japan Cover
----
 Final Fantasy&nbsp;XII marks a major turning point in the series for several reasons. The game had a very long
 development period during which Square merged into Square Enix, and several influential people left the company. Final
 Fantasy&nbsp;XI was an MMORPG and there was some uncertainty about the future of the Final Fantasy series. I was in
 college when XII came out and I barely remember playing it. Given that context, I was looking forward to play this game
 again.
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 The battles in this game are probably the biggest change from previous games. First, battles occur directly on the map
 without a separate battle screen. Second, your party members can be programmed to act automatically with the "gambit"
@@ -82,4 +68,4 @@ during my playthrough. It's definitely below <GameLink slug="final_fantasy_iv" /
 adventure. Overall, I think I enjoyed <GameLink slug="final_fantasy_iii" /> just a bit more, so I'll slide this under
 it.
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

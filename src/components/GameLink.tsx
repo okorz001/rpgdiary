@@ -1,17 +1,13 @@
 import { PropsWithChildren } from '@/components'
 import Link from '@/components/Link'
-import { useRanking } from '@/components/RankingProvider'
+import { getGameName, getGameInfo } from '@/lib/games'
 
 type GameLinkProps = PropsWithChildren & {
   slug: string
 }
 
 export default function GameLink(props: GameLinkProps) {
-  const ranking = useRanking()
-  const game = ranking.find(it => it.slug == props.slug)
-  if (!game) {
-    throw new Error(`Unknown slug: ${props.slug}`)
-  }
-  const label = props.children || <>{game.title}</>
+  const game = getGameInfo(props.slug)
+  const label = props.children || <>{getGameName(game)}</>
   return <Link href={`/games/${props.slug}`}>{label}</Link>
 }

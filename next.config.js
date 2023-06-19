@@ -5,4 +5,6 @@ const nextConfig = {
   output: 'export',
 }
 
-module.exports = nextConfig
+const withMdx = require('@next/mdx')()
+
+module.exports = withMdx(nextConfig)

@@ -1,22 +1,8 @@
----
-title: "Final Fantasy\xA0X"
-date: '2023-01-11'
-data:
-  year: 2001
-  system: PS2
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_x/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_x/cover-jp.jpg
-    caption: Japan Cover
----
 Final Fantasy&nbsp;X is a game that I have many fond memories of. It's one of the very first games that I can remember
 buying for myself. I know this game well, but it's been 15 years since the last time I've played it. Does it still hold
 up today?
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Final Fantasy&nbsp;X is the first game in the series with spoken dialogue. This seemingly minor change along with
 the next generation (at the time) graphics make a huge impact, giving the game a very cinematic quality. This style
@@ -78,4 +64,4 @@ those I most enjoyed to those I least enjoyed. Clearly this is still one of my f
 getting crowded at the top. I preferred the plot just a bit more than <GameLink slug="final_fantasy_ix" />, but the
 painful (though optional) minigames leave it just under <GameLink slug="final_fantasy_v" /> for me.
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

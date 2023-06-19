@@ -1,24 +1,8 @@
----
-title: Final Fantasy
-date: '2022-06-03'
-data:
-  year: 1987
-  yearNotes: 'US: 1990'
-  system: NES
-  developer: Square
-  publisher: Square
-  publisherNotes: 'US: Nintendo'
-  covers:
-  - image: final_fantasy/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy/cover-jp.jpg
-    caption: Japan Cover
----
 My initial goal that led to this site was to play all of the mainline Final Fantasy games in order, so the original
 Final Fantasy was the first game I completed. I've beaten this exact version of the game at least once before, so how
 did it hold up on replay in 2022?
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 To be honest, I don't think this game has aged particularly well. At the very least, it does not deliver on what I
 consider to be the most important component of an RPG &mdash; the plot. There are no cutscenes of any kind and unless
@@ -59,4 +43,4 @@ After completing a game, I add it to [my overall enjoyment ranking](/ranking) wh
 those I most enjoyed to those I least enjoyed. Since this is the first game I've completed, it is by default the most
 enjoyed! (It's also the least enjoyed!)
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

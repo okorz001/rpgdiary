@@ -1,23 +1,8 @@
----
-title: "Final Fantasy\xA0IV"
-date: '2022-06-27'
-data:
-  titleNotes: "US: Final Fantasy\xA0II"
-  year: 1991
-  system: SNES
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_iv/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_iv/cover-jp.jpg
-    caption: Japan Cover
----
 Final Fantasy&nbsp;IV is a very popular game, but I've never completed it. I started to play it once a long time ago,
 but for some reason I abandoned it before getting very far. Now that I'm playing through the entire series, it's time
 for me to finally play this one all the way through.
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Final Fantasy&nbsp;IV is a simple game. Party changes are forced at certain points in the story and, as far as I can
 tell, characters have fixed stat growth and learn abilities at fixed levels. When I was younger, I would have found this
@@ -59,4 +44,4 @@ After completing a game, I add it to [my overall enjoyment ranking](/ranking) wh
 those I most enjoyed to those I least enjoyed. It's a tough decision for me between this game and
 <GameLink slug="final_fantasy_iii" />, but I'll choose plot over gameplay and put this game on top!
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

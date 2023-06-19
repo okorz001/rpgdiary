@@ -1,19 +1,7 @@
----
-title: "Final Fantasy\xA0III"
-date: '2022-06-21'
-data:
-  year: 1990
-  system: NES
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_iii/cover-jp.jpg
-    caption: Japan Cover
----
 Final Fantasy&nbsp;III is a game I've beaten before. I'm not talking about the DS remake either &mdash; I've beaten this
 specific version before. So how does it hold up on replay?
 
-<GameHeader/>
+<GameHeader game={props.game} />
 
 Before I continue, I must clarify that this version was never officially released in the US. I used the
 [Alex&nbsp;W. Jackson&nbsp;/ Neill Corlett&nbsp;/ SoM2Freak&nbsp;(v1.1) translation hack](https://www.romhacking.net/translations/141/).
@@ -65,4 +53,4 @@ After completing a game, I add it to [my overall enjoyment ranking](/ranking) wh
 those I most enjoyed to those I least enjoyed. I think this game is superior on all aspects to the original, and the
 gameplay is more fun than the second game, so Final Fantasy&nbsp;III is going straight to the top of my list!
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

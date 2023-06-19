@@ -1,22 +1,8 @@
----
-title: "Final Fantasy\xA0IX"
-date: '2022-12-18'
-data:
-  year: 2000
-  system: PlayStation
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_ix/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_ix/cover-jp.jpg
-    caption: Japan Cover
----
 
 Final Fantasy&nbsp;IX is another game that I've not played before (unless you count the first hour or so). This
 game seems to be popular and I've heard it's somewhat "retro", so I've always been curious about this one.
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Final Fantasy&nbsp;IX is a very plot-focused game, and I was totally hooked once the plot started unfolding. I really
 liked the characters in this game &mdash; they are memorable and most of them show growth during the game. I also found
@@ -64,4 +50,4 @@ those I most enjoyed to those I least enjoyed. It's a tough decision for me betw
 <GameLink slug="final_fantasy_v" />. Since I had more (admittedly minor) annoyances with this game, I'll slide this just
 under it.
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

@@ -1,49 +1,17 @@
-'use client'
+import { type PropsWithChildren } from '@/components'
 
-import { MDXRemote } from 'next-mdx-remote'
-
-import { PropsWithChildren } from '@/components'
-import ArticleMetaProvider from '@/components/ArticleMetaProvider'
-import Figure from '@/components/Figure'
-import GameHeader from '@/components/GameHeader'
-import GameLink from '@/components/GameLink'
-import GameRanking from '@/components/GameRanking'
-import { LikedDisliked, LikedList, LikedItem, DislikedList, DislikedItem } from '@/components/LikedDisliked'
-import Link from '@/components/Link'
-import Spoiler from '@/components/Spoiler'
-import { ArticleData } from '@/lib/articles'
-
-function Paragraph(props: PropsWithChildren) {
-  return (<p className="my-4 indent-8 text-justify">{props.children}</p>)
+type ArticleProps = PropsWithChildren & {
+  title: string
+  date?: string
 }
 
-const components = {
-  // override styles
-  a: Link,
-  p: Paragraph,
-  // custom components
-  Figure,
-  GameHeader,
-  GameLink,
-  GameRanking,
-  Spoiler,
-  // liked/disliked lists
-  LikedDisliked,
-  LikedList,
-  LikedItem,
-  DislikedList,
-  DislikedItem,
-}
-
-export default function Article(props: ArticleData) {
-  const date = props.meta.date && renderDate(props.meta.date)
+export default function Article(props: ArticleProps) {
+  const date = props.date && renderDate(props.date)
   return (
     <article className="px-2 py-2">
       {date && <div className="mb-1 text-xs">{date}</div>}
-      <h2 className="text-3xl text-center font-serif">{props.meta.title}</h2>
-      <ArticleMetaProvider meta={props.meta}>
-        <MDXRemote components={components} {...props.mdxProps} />
-      </ArticleMetaProvider>
+      <h2 className="text-3xl text-center font-serif">{props.title}</h2>
+      {props.children}
     </article>
   )
 }

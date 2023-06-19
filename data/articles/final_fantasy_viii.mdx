@@ -1,23 +1,9 @@
----
-title: "Final Fantasy\xA0VIII"
-date: '2022-11-11'
-data:
-  year: 1999
-  system: PlayStation
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_viii/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_viii/cover-jp.jpg
-    caption: Japan Cover
----
 
 Final Fantasy&nbsp;VIII is a game I had never played before and I had very little knowledge about it. Despite being
 released during Square's "golden era", it seems to be less popular than the other games released during that time. With
 that context, I was very excited to play this game.
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Unfortunately, I felt this game started off on the wrong foot immediately. The opening FMV is a confusing blur that
 blends a proper prologue scene (the duel) with teasers of FMVs from later in the game (everything else). The game itself
@@ -67,4 +53,4 @@ those I most enjoyed to those I least enjoyed. I was thoroughly disappointed wit
 I wasn't committed to playing the entire series. The plot is a mess, but I'd probably prefer playing this again over
 <GameLink slug="final_fantasy_ii" />.
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

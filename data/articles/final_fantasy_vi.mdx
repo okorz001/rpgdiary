@@ -1,23 +1,8 @@
----
-title: "Final Fantasy\xA0VI"
-date: '2022-09-02'
-data:
-  titleNotes: "US: Final Fantasy\xA0III"
-  year: 1994
-  system: SNES
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_vi/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_vi/cover-jp.jpg
-    caption: Japan Cover
----
 Final Fantasy&nbsp;VI was one of the first RPGs that I ever played as a child and I have very fond memories of it. I've
 actually been a little afraid to replay this one because I was worried that I may not like it as much I remember. So
 does it still hold up 20+ years later?
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 Final Fantasy&nbsp;VI's most distinctive feature is its large cast of characters. Up to 14 characters can join the
 party, and unlike previous games, they all join permanently. This may seem excessive with a party size of only 4, but
@@ -77,4 +62,4 @@ After completing a game, I add it to [my overall enjoyment ranking](/ranking) wh
 those I most enjoyed to those I least enjoyed. I didn't enjoy this quite as much as <GameLink slug="final_fantasy_v" />,
 so I'll drop it in at #2. (Finally, something gets added somewhere other than #1!)
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />

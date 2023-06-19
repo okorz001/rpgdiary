@@ -1,24 +1,10 @@
----
-title: "Final Fantasy\xA0X-2"
-date: '2023-02-12'
-data:
-  year: 2003
-  system: PS2
-  developer: Square
-  publisher: Square
-  covers:
-  - image: final_fantasy_x_2/cover-us.jpg
-    caption: US Cover
-  - image: final_fantasy_x_2/cover-jp.jpg
-    caption: Japan Cover
----
 After completing <GameLink slug="final_fantasy_x" />, I had to decide whether to play its sequel or skip ahead to the
 next main game. Ultimately, I chose to play this because it was released chronologically between X and
 <GameLink slug="final_fantasy_xii" />, so it felt historically relevant. Oddly, I cannot remember if I have actually
 played this game before or if I've only read about it. It's a very controversial game among fans of the series, so I was
 curious how I'd feel about it.
 
-<GameHeader />
+<GameHeader game={props.game} />
 
 In many ways, Final Fantasy&nbsp;X-2 is a polar opposite of Final Fantasy&nbsp;X. Unfortunately, since I enjoy
 almost everything about X, that means I really did not enjoy this one at all. Honestly, I wanted to quit pretty much
@@ -75,4 +61,4 @@ After completing a game, I add it to [my overall enjoyment ranking](/ranking) wh
 those I most enjoyed to those I least enjoyed. There's no doubt that this was the least fun that I've had playing
 anything in a long time. (Sorry.)
 
-<GameRanking game={slug} />
+<GameRanking game={props.slug} />
