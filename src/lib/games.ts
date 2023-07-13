@@ -78,6 +78,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
   { slug: 'final_fantasy_ii', date: '2022-06-14' },
   { slug: 'final_fantasy', date: '2022-06-03' },
+  { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
 ]
 
@@ -244,6 +245,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'final_fantasy_xiii_2/cover-us.png' },
       { caption: 'Japan Cover', image: 'final_fantasy_xiii_2/cover-jp.jpg' },
+    ],
+  },
+
+  lightning_returns: {
+    title: { value: ['Lightning Returns'] },
+    year: { value: 2013, notes: { US: 2014 } },
+    system: { value: ['PS3', 'Xbox 360'] },
+    developer: { value: ['Square Enix', 'tri-Ace'] },
+    publisher: { value: ['Square Enix'] },
+    covers: [
+      { caption: 'US Cover', image: 'lightning_returns/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'lightning_returns/cover-jp.jpg' },
     ],
   },
 
