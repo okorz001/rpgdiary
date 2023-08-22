@@ -17,7 +17,7 @@ export default function PageNav(props: PageNavProps) {
     }
     return <div className="text-center text-xl -my-1">{inner}</div>
   }
-  return (
+  const nav = (
     <nav className={`
       sticky bottom-0 px-2 py-2 bg-inherit
       grid grid-cols-pageNav justify-center items-center
@@ -29,4 +29,8 @@ export default function PageNav(props: PageNavProps) {
       {createLink(count, '>>')}
     </nav>
   )
+  // The sticky bottom nav doesn't account for disappearing browser UI during scrolling, which breaks the illusion of
+  // sticking to the bottom of the viewport. For some reason adding a fixed element after the nav stops this behavior.
+  // https://www.stevefenton.co.uk/blog/2022/12/mobile-position-sticky-issue/
+  return <>{nav}<div className="fixed" /></>
 }
