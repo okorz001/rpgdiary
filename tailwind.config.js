@@ -51,7 +51,7 @@ module.exports = {
       },
       screens: {
         // nb = navbar, at this width links are moved from dropdown into navbar itself
-        nb: '480px',
+        nb: '600px',
       },
       zIndex: {
         // default 0

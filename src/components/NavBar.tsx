@@ -3,13 +3,24 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+type Link = {
+  label: string
+  href: string
+}
+
+const LINKS: Link[] = [
+  {label: 'Latest', href: '/'},
+  {label: 'Ranking', href: '/ranking'},
+  {label: 'About', href: '/about'},
+]
+
 export default function NavBar() {
   const [hasMenu, setHasMenu] = useState<boolean>(false)
   const toggleMenu = () => setHasMenu(!hasMenu)
   const hideMenu = () => setHasMenu(false)
 
-  const createLink = (label: string, href: string) => (
-    <Link href={href} onClick={hideMenu} className="font-bold uppercase px-4 py-4 nb:py-1.5">
+  const createLink = ({label, href}: Link) => (
+    <Link key={label} href={href} onClick={hideMenu} className="font-bold uppercase px-4 py-4 nb:py-1.5">
       {label}
     </Link>
   )
@@ -28,8 +39,7 @@ export default function NavBar() {
           ${hasMenu ? 'max-nb:absolute' : 'max-nb:hidden'} max-nb:top-12 max-nb:right-4 max-nb:min-w-[160px]
             max-nb:border-b-2 max-nb:border-x-2 max-nb:border-text/20 max-nb:bg-paper max-nb:text-text/80
         `}>
-          {createLink('Latest', '/')}
-          {createLink('Ranking', '/ranking')}
+          {LINKS.map(createLink)}
         </nav>
       </div>
     </header>

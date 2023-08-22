@@ -14,6 +14,13 @@ function Paragraph(props: PropsWithChildren) {
   return <p className="my-4 indent-8 text-justify">{props.children}</p>
 }
 
+// the nav bar uses <h1>
+// the article title uses <h2>
+// thus, markdown content should start with <h3>
+function Header(props: PropsWithChildren) {
+  return <h3 className="my-4 font-serif text-xl text-center">{props.children}</h3>
+}
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // MDX wrapper/layout
@@ -22,6 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // override styles
     a: Link,
     p: Paragraph,
+    h1: Header,
 
     // custom components
     Figure,
