@@ -81,9 +81,22 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy', date: '2022-06-03' },
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
+  { slug: 'dragon_quest', date: '2023-08-21' },
 ]
 
 const GAMES: Record<string, GameInfo> = {
+  dragon_quest: {
+    title: { value: ['Dragon Quest'], notes: { US: ['Dragon Warrior'] } },
+    year: { value: 1986, notes: { US: 1989 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Chunsoft'] },
+    publisher: { value: ['Enix'], notes: { US: ['Nintendo'] } },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'dragon_quest/cover-jp.jpg' },
+    ],
+  },
+
   final_fantasy: {
     title: { value: ['Final Fantasy'] },
     year: { value: 1987, notes: { US: 1990 } },
