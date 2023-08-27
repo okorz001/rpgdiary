@@ -8,6 +8,7 @@ import GameLink from '@/components/GameLink'
 import GameRanking from '@/components/GameRanking'
 import { LikedDisliked, LikedList, LikedItem, DislikedList, DislikedItem } from '@/components/LikedDisliked'
 import Link from '@/components/Link'
+import Note from '@/components/Note'
 import Spoiler from '@/components/Spoiler'
 
 function Paragraph(props: PropsWithChildren) {
@@ -36,6 +37,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     GameHeader,
     GameLink,
     GameRanking,
+    Note,
     Spoiler,
 
     // liked/disliked lists
