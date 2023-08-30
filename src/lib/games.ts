@@ -78,6 +78,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
   { slug: 'final_fantasy_ii', date: '2022-06-14' },
+  { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
@@ -94,6 +95,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_ii: {
+    title: { value: ['Dragon Quest II'], notes: { US: ['Dragon Warrior II'] } },
+    year: { value: 1987, notes: { US: 1990 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Chunsoft'] },
+    publisher: { value: ['Enix'], notes: { US: ['Nintendo'] } },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest_ii/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'dragon_quest_ii/cover-jp.jpg' },
     ],
   },
 
