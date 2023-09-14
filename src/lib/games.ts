@@ -104,7 +104,7 @@ const GAMES: Record<string, GameInfo> = {
     year: { value: 1987, notes: { US: 1990 } },
     system: { value: ['NES'] },
     developer: { value: ['Chunsoft'] },
-    publisher: { value: ['Enix'], notes: { US: ['Nintendo'] } },
+    publisher: { value: ['Enix'] },
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_ii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest_ii/cover-jp.jpg' },
@@ -116,7 +116,7 @@ const GAMES: Record<string, GameInfo> = {
     year: { value: 1988, notes: { US: 1992 } },
     system: { value: ['NES'] },
     developer: { value: ['Chunsoft'] },
-    publisher: { value: ['Enix'], notes: { US: ['Nintendo'] } },
+    publisher: { value: ['Enix'] },
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_iii/cover-us.png' },
       { caption: 'Japan Cover', image: 'dragon_quest_iii/cover-jp.jpg' },
