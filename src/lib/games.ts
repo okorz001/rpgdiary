@@ -77,6 +77,7 @@ const RANKING: GameRanking[] = [
   { slug: 'pokemon_scarlet_and_violet', date: '2023-01-24' },
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
+  { slug: 'dragon_quest_iii', date: '2023-09-12' },
   { slug: 'final_fantasy_ii', date: '2022-06-14' },
   { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
@@ -99,7 +100,7 @@ const GAMES: Record<string, GameInfo> = {
   },
 
   dragon_quest_ii: {
-    title: { value: ['Dragon Quest II'], notes: { US: ['Dragon Warrior II'] } },
+    title: { value: ['Dragon Quest\xA0II'], notes: { US: ['Dragon Warrior\xA0II'] } },
     year: { value: 1987, notes: { US: 1990 } },
     system: { value: ['NES'] },
     developer: { value: ['Chunsoft'] },
@@ -107,6 +108,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_ii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest_ii/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_iii: {
+    title: { value: ['Dragon Quest\xA0III'], notes: { US: ['Dragon Warrior\xA0III'] } },
+    year: { value: 1988, notes: { US: 1992 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Chunsoft'] },
+    publisher: { value: ['Enix'], notes: { US: ['Nintendo'] } },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest_iii/cover-us.png' },
+      { caption: 'Japan Cover', image: 'dragon_quest_iii/cover-jp.jpg' },
     ],
   },
 
