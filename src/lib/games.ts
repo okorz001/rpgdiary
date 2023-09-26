@@ -73,6 +73,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_xiii_2', date: '2023-06-03' },
   { slug: 'final_fantasy_iv', date: '2022-06-27' },
   { slug: 'final_fantasy_iii', date: '2022-06-21' },
+  { slug: 'dragon_quest_iv', date: '2023-09-23' },
   { slug: 'final_fantasy_xii', date: '2023-04-02' },
   { slug: 'pokemon_scarlet_and_violet', date: '2023-01-24' },
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
@@ -120,6 +121,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_iii/cover-us.png' },
       { caption: 'Japan Cover', image: 'dragon_quest_iii/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_iv: {
+    title: { value: ['Dragon Quest\xA0IV'], notes: { US: ['Dragon Warrior\xA0IV'] } },
+    year: { value: 1990, notes: { US: 1992 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Chunsoft'] },
+    publisher: { value: ['Enix'] },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest_iv/cover-us.png' },
+      { caption: 'Japan Cover', image: 'dragon_quest_iv/cover-jp.png' },
     ],
   },
 
