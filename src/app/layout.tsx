@@ -5,8 +5,10 @@ import '@/app/globals.css'
 import { PropsWithChildren } from '@/components'
 import NavBar from '@/components/NavBar'
 
-export const dynamic = 'error'
-export const dynamicParams = false
+// These are broken in Next.JS 13.5.4
+// see: https://github.com/vercel/next.js/issues/56253
+//export const dynamic = 'error'
+//export const dynamicParams = false
 
 export const metadata: Metadata = {
   title: {
