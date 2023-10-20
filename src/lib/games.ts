@@ -76,6 +76,8 @@ const RANKING: GameRanking[] = [
   { slug: 'dragon_quest_iv', date: '2023-09-23' },
   { slug: 'final_fantasy_xii', date: '2023-04-02' },
   { slug: 'pokemon_scarlet_and_violet', date: '2023-01-24' },
+  { slug: 'dragon_quest_v', date: '2023-10-01' },
+  { slug: 'dragon_quest_vi', date: '2023-10-17' },
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
   { slug: 'dragon_quest_iii', date: '2023-09-12' },
@@ -133,6 +135,28 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_iv/cover-us.png' },
       { caption: 'Japan Cover', image: 'dragon_quest_iv/cover-jp.png' },
+    ],
+  },
+
+  dragon_quest_v: {
+    title: { value: ['Dragon Quest\xA0V'] },
+    year: { value: 1992 },
+    system: { value: ['SNES'] },
+    developer: { value: ['Chunsoft'] },
+    publisher: { value: ['Enix'] },
+    covers: [
+      { caption: 'Japan Cover', image: 'dragon_quest_v/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_vi: {
+    title: { value: ['Dragon Quest\xA0VI'] },
+    year: { value: 1995 },
+    system: { value: ['SNES'] },
+    developer: { value: ['Heart Beat'] },
+    publisher: { value: ['Enix'] },
+    covers: [
+      { caption: 'Japan Cover', image: 'dragon_quest_vi/cover-jp.jpg' },
     ],
   },
 
