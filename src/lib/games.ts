@@ -72,6 +72,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_vi', date: '2022-09-02' },
   { slug: 'final_fantasy_xiii_2', date: '2023-06-03' },
   { slug: 'final_fantasy_iv', date: '2022-06-27' },
+  { slug: 'final_fantasy_xvi', date: '2024-01-13' },
   { slug: 'final_fantasy_iii', date: '2022-06-21' },
   { slug: 'dragon_quest_iv', date: '2023-09-23' },
   { slug: 'final_fantasy_xii', date: '2023-04-02' },
@@ -359,6 +360,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'final_fantasy_xv/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'final_fantasy_xv/cover-jp.jpg' },
+    ],
+  },
+
+  final_fantasy_xvi: {
+    title: { value: ['Final Fantasy\xA0XVI'] },
+    year: { value: 2023 },
+    system: { value: ['PS5'] },
+    developer: { value: ['Square Enix'] },
+    publisher: { value: ['Square Enix'] },
+    covers: [
+      { caption: 'US Cover', image: 'final_fantasy_xvi/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'final_fantasy_xvi/cover-jp.jpg' },
     ],
   },
 
