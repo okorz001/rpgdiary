@@ -69,6 +69,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_ix', date: '2022-12-18' },
   { slug: 'final_fantasy_vii', date: '2022-10-14' },
   { slug: 'final_fantasy_xv', date: '2023-08-10' },
+  { slug: 'dragon_quest_viii', date: '2024-02-10' },
   { slug: 'final_fantasy_vi', date: '2022-09-02' },
   { slug: 'final_fantasy_xiii_2', date: '2023-06-03' },
   { slug: 'final_fantasy_iv', date: '2022-06-27' },
@@ -171,6 +172,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_vii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest_vii/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_viii: {
+    title: { value: ['Dragon Quest\xA0VIII'] },
+    year: { value: 2004, notes: { US: 2005 } },
+    system: { value: ['PS2'] },
+    developer: { value: ['Level-5'] },
+    publisher: { value: ['Square Enix'] },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest_viii/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'dragon_quest_viii/cover-jp.jpg' },
     ],
   },
 
