@@ -89,6 +89,7 @@ const RANKING: GameRanking[] = [
   { slug: 'dragon_quest_vii', date: '2023-11-29' },
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
+  { slug: 'dragon_quest_ix', date: '2024-03-23' },
   { slug: 'dragon_quest', date: '2023-08-21' },
 ]
 
@@ -184,6 +185,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_viii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest_viii/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_ix: {
+    title: { value: ['Dragon Quest\xA0IX'] },
+    year: { value: 2009, notes: { US: 2010 } },
+    system: { value: ['Nintendo DS'] },
+    developer: { value: ['Level-5', 'Square Enix'] },
+    publisher: { value: ['Square Enix'], notes: { US: ['Nintendo'] } },
+    covers: [
+      { caption: 'US Cover', image: 'dragon_quest_ix/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'dragon_quest_ix/cover-jp.jpg' },
     ],
   },
 
