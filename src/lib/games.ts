@@ -200,6 +200,18 @@ const GAMES: Record<string, GameInfo> = {
     ],
   },
 
+  dragon_quest_xi_s: {
+    title: { value: ['Dragon Quest\xA0XI\xA0S'] },
+    year: { value: 2019, notes: { Original: 2017 } },
+    system: { value: ['Switch', 'PS4', 'Xbox One', 'Windows'] },
+    developer: { value: ['Square Enix'] },
+    publisher: { value: ['Square Enix'] },
+    covers: [
+      { caption: 'Switch Cover', image: 'dragon_quest_xi_s/cover-switch.jpg' },
+      { caption: 'PS4 Cover', image: 'dragon_quest_xi_s/cover-ps4.png' },
+    ],
+  },
+
   final_fantasy: {
     title: { value: ['Final Fantasy'] },
     year: { value: 1987, notes: { US: 1990 } },
