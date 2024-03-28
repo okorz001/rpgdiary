@@ -380,7 +380,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_xv: {
     title: { value: ['Final Fantasy\xA0XV'] },
     year: { value: 2016 },
-    system: { value: ['PS4', 'Xbox One'] },
+    system: { value: ['PS4', 'Xbox One', 'Windows'] },
     developer: { value: ['Square Enix'] },
     publisher: { value: ['Square Enix'] },
     covers: [
