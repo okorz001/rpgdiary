@@ -53,7 +53,7 @@ export default function RootLayout(props: PropsWithChildren) {
         <main className="w-full max-w-main mx-auto bg-paper divide-y divide-text/20">
           {props.children}
           <footer className="w-full max-w-main mx-auto text-sm text-center p-2">
-            &copy;2023 Oscar Korz &mdash; All rights reserved
+            &copy;2022-{new Date().getFullYear()} Oscar Korz &mdash; All rights reserved
           </footer>
         </main>
       </body>
