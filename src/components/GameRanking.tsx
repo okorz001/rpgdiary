@@ -42,28 +42,27 @@ export default function GameRanking(props: GameRankingProps) {
   }
 
   return (
-    <div className="w-fit min-w-[60%] mx-auto my-4 p-2 rounded-xl bg-tertiary grid grid-cols-list gap-2 justify-center">
-      <div className="col-span-2 text-center font-bold">Most Enjoyed</div>
-      <ul className="contents text-xl font-serif">
-        {moreBefore && createMoreItem()}
-        {ranking.map((it, index) => createItem(it, index + start, props.game))}
-        {moreAfter && createMoreItem()}
-      </ul>
-      <div className="col-span-2 text-center font-bold">Least Enjoyed</div>
+    <div className="w-fit mx-auto my-4 p-2 rounded-xl bg-tertiary">
+      <div className="text-center text-lg font-bold">Most Enjoyed</div>
+      {moreBefore && createMoreItem()}
+      <ol className="list-inside list-decimal" start={start}>
+        {ranking.map(it => createItem(it, props.game))}
+      </ol>
+      {moreAfter && createMoreItem()}
+      <div className="text-center text-lg font-bold">Least Enjoyed</div>
     </div>
   )
 }
 
-function createItem(game: GameRanking, rank: number, selected?: string) {
+function createItem(game: GameRanking, selected?: string) {
   const name = getGameName(getGameInfo(game.slug))
   return (
-    <li key={game.slug} className="contents">
-      <span className="text-right">{game.slug == selected && '➡︎'} {`${rank}. `}</span>
-      <span>{game.slug == selected ? name : <GameLink slug={game.slug} />}</span>
+    <li key={game.slug}>
+      {game.slug == selected ? <span className="font-bold">{name}</span> : <GameLink slug={game.slug} />}
     </li>
   )
 }
 
 function createMoreItem() {
-  return <li className="col-span-2 -my-1.5 font-bold text-center">·&nbsp;·&nbsp;·</li>
+  return <div className="-my-1 font-bold text-center">·&nbsp;·&nbsp;·</div>
 }
