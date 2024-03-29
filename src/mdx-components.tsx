@@ -10,6 +10,7 @@ import { LikedDisliked, LikedList, LikedItem, DislikedList, DislikedItem } from 
 import Link from '@/components/Link'
 import Note from '@/components/Note'
 import Spoiler from '@/components/Spoiler'
+import TranslationNote from '@/components/TranslationNote'
 
 function Paragraph(props: PropsWithChildren) {
   return <p className="my-4 indent-8 text-justify">{props.children}</p>
@@ -39,6 +40,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     GameRanking,
     Note,
     Spoiler,
+    TranslationNote,
 
     // liked/disliked lists
     LikedDisliked,
