@@ -12,7 +12,7 @@ export default function TranslationNote(props: TranslationNoteProps) {
   return (
     <Note>
       This version was never officially released in the US, so I used the {link}.
-      It's possible that this translation may have mistakes.
+      It is possible that this translation may have mistakes.
     </Note>
   )
 }
