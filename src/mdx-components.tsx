@@ -13,7 +13,7 @@ import Spoiler from '@/components/Spoiler'
 import TranslationNote from '@/components/TranslationNote'
 
 function Paragraph(props: PropsWithChildren) {
-  return <p className="my-4 indent-8 text-justify">{props.children}</p>
+  return <p className="my-4 text-justify">{props.children}</p>
 }
 
 // the nav bar uses <h1>
