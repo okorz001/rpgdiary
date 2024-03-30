@@ -1,6 +1,7 @@
 // @ts-check
 
 const theme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 /** @param {string} name */
 function defineColor(name) {
@@ -59,5 +60,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({addVariant}) => {
+      addVariant('child', '& > *')
+    }),
+  ],
 }

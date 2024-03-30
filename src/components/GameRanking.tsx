@@ -41,14 +41,17 @@ export default function GameRanking(props: GameRankingProps) {
     }
   }
 
+  // need extra padding if double digits
+  var padding = start + ranking.length < 10 ? 'ps-4' : 'ps-6'
+
   return (
     <div className="w-fit mx-auto my-4 p-2 rounded-xl bg-tertiary">
       <div className="text-center text-lg font-bold">Most Enjoyed</div>
-      {moreBefore && createMoreItem()}
-      <ol className="list-inside list-decimal" start={start}>
+      <ol className={`list-outside ${padding} child:my-1.5`} start={start + (moreBefore ? -1 : 0)}>
+        {moreBefore && <li>.&nbsp;.&nbsp;.</li>}
         {ranking.map(it => createItem(it, props.game))}
+        {moreAfter && <li>.&nbsp;.&nbsp;.</li>}
       </ol>
-      {moreAfter && createMoreItem()}
       <div className="text-center text-lg font-bold">Least Enjoyed</div>
     </div>
   )
@@ -57,12 +60,8 @@ export default function GameRanking(props: GameRankingProps) {
 function createItem(game: GameRanking, selected?: string) {
   const name = getGameName(getGameInfo(game.slug))
   return (
-    <li key={game.slug}>
+    <li key={game.slug} className="list-decimal">
       {game.slug == selected ? <span className="font-bold">{name}</span> : <GameLink slug={game.slug} />}
     </li>
   )
-}
-
-function createMoreItem() {
-  return <div className="-my-1 font-bold text-center">·&nbsp;·&nbsp;·</div>
 }
