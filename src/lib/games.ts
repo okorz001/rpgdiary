@@ -167,7 +167,7 @@ const GAMES: Record<string, GameInfo> = {
   dragon_quest_vii: {
     title: { value: ['Dragon Quest\xA0VII'], notes: { US: ['Dragon Warrior\xA0VII'] } },
     year: { value: 2000, notes: { US: 2001 } },
-    system: { value: ['PlayStation'] },
+    system: { value: ['PSX'] },
     developer: { value: ['Heart Beat', 'ArtePiazza'] },
     publisher: { value: ['Enix'] },
     covers: [
@@ -191,7 +191,7 @@ const GAMES: Record<string, GameInfo> = {
   dragon_quest_ix: {
     title: { value: ['Dragon Quest\xA0IX'] },
     year: { value: 2009, notes: { US: 2010 } },
-    system: { value: ['Nintendo DS'] },
+    system: { value: ['DS'] },
     developer: { value: ['Level-5', 'Square Enix'] },
     publisher: { value: ['Square Enix'], notes: { US: ['Nintendo'] } },
     covers: [
@@ -272,7 +272,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_vii: {
     title: { value: ['Final Fantasy\xA0VII'] },
     year: { value: 1997 },
-    system: { value: ['PlayStation'] },
+    system: { value: ['PSX'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'], notes: { US: ['Sony'] } },
     covers: [
@@ -284,7 +284,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_viii: {
     title: { value: ['Final Fantasy\xA0VIII'] },
     year: { value: 1999 },
-    system: { value: ['PlayStation'] },
+    system: { value: ['PSX'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'] },
     covers: [
@@ -296,7 +296,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_ix: {
     title: { value: ['Final Fantasy\xA0IX'] },
     year: { value: 2000 },
-    system: { value: ['PlayStation'] },
+    system: { value: ['PSX'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'] },
     covers: [
@@ -344,7 +344,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_xiii: {
     title: { value: ['Final Fantasy\xA0XIII'] },
     year: { value: 2009, notes: { US: 2010 } },
-    system: { value: ['PS3', 'Xbox 360'] },
+    system: { value: ['PS3', '360'] },
     developer: { value: ['Square Enix'] },
     publisher: { value: ['Square Enix'] },
     covers: [
@@ -356,7 +356,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_xiii_2: {
     title: { value: ['Final Fantasy\xA0XIII-2'] },
     year: { value: 2011, notes: { US: 2012 } },
-    system: { value: ['PS3', 'Xbox 360'] },
+    system: { value: ['PS3', '360'] },
     developer: { value: ['Square Enix', 'tri-Ace'] },
     publisher: { value: ['Square Enix'] },
     covers: [
@@ -368,7 +368,7 @@ const GAMES: Record<string, GameInfo> = {
   lightning_returns: {
     title: { value: ['Lightning Returns'] },
     year: { value: 2013, notes: { US: 2014 } },
-    system: { value: ['PS3', 'Xbox 360'] },
+    system: { value: ['PS3', '360'] },
     developer: { value: ['Square Enix', 'tri-Ace'] },
     publisher: { value: ['Square Enix'] },
     covers: [
@@ -380,7 +380,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_xv: {
     title: { value: ['Final Fantasy\xA0XV'] },
     year: { value: 2016 },
-    system: { value: ['PS4', 'Xbox One', 'Windows'] },
+    system: { value: ['PS4', 'XB1', 'WIN'] },
     developer: { value: ['Square Enix'] },
     publisher: { value: ['Square Enix'] },
     covers: [
@@ -405,7 +405,7 @@ const GAMES: Record<string, GameInfo> = {
     name: 'Pokemon Scarlet and Violet',
     title: { value: ['Pokemon Scarlet', 'Pokemon Violet'] },
     year: { value: 2022 },
-    system: { value: ['Switch'] },
+    system: { value: ['NS'] },
     developer: { value: ['Game Freak'] },
     publisher: { value: ['Nintendo'] },
     covers: [

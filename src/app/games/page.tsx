@@ -17,9 +17,9 @@ export default function GamesPage() {
         <tr className="child:p-4">
           <th>Name</th>
           <th>Year</th>
-          <th className="max-[400px]:hidden">System</th>
-          <th className="max-[540px]:hidden">Developer</th>
-          <th className="max-[650px]:hidden">Publisher</th>
+          <th className="max-[380px]:hidden">System</th>
+          <th className="max-[525px]:hidden">Developer</th>
+          <th className="max-[625px]:hidden">Publisher</th>
         </tr>
       </thead>
       <tbody>
@@ -34,9 +34,9 @@ function createGameRow(slug: string, game: GameInfo) {
     <tr key={slug} className="align-top odd:bg-black/10 child:p-4">
       <td><GameLink slug={slug}>{createList(game.title.value)}</GameLink></td>
       <td>{game.year.value}</td>
-      <td className="max-[400px]:hidden">{createList(game.system.value)}</td>
-      <td className="max-[540px]:hidden">{createList(game.developer.value)}</td>
-      <td className="max-[650px]:hidden">{createList(game.publisher.value)}</td>
+      <td className="max-[380px]:hidden">{createList(game.system.value)}</td>
+      <td className="max-[525px]:hidden">{createList(game.developer.value)}</td>
+      <td className="max-[625px]:hidden">{createList(game.publisher.value)}</td>
     </tr>
   )
 }
