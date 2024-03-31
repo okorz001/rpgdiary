@@ -9,11 +9,9 @@ type Link = {
 }
 
 const LINKS: Link[] = [
-  {label: 'Latest', href: '/'},
   {label: 'Games', href: '/games'},
   {label: 'Ranking', href: '/ranking'},
-  // TODO: navbar is getting busy, maybe this should be linked elsewhere
-  //{label: 'About', href: '/about'},
+  {label: 'About', href: '/about'},
 ]
 
 export default function NavBar() {
