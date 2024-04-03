@@ -60,6 +60,23 @@ export function getGameArticle(slug: string): GameArticle {
   return articles[slug] || (() => { throw new Error(`No article for slug: ${slug}`) })
 }
 
+// could eventually define these separately with more data
+export function getSystems(): string[] {
+  const o = {}
+  Object.values(GAMES).forEach(game => game.system.value.forEach(it => o[it] = 1))
+  return Object.keys(o).sort()
+}
+
+// could eventually define these separately with more data
+export function getCompanies(): string[] {
+  const o = {}
+  Object.values(GAMES).forEach(game => {
+    game.developer.value.forEach(it => o[it] = 1)
+    game.publisher.value.forEach(it => o[it] = 1)
+  })
+  return Object.keys(o).sort()
+}
+
 // just define all data below as constants
 // this avoids I/O and parsing plus it leverages TS type checking
 

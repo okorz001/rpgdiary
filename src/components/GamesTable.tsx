@@ -3,31 +3,32 @@
 import { useState } from 'react'
 
 import GameLink from '@/components/GameLink'
-import { type GameInfo, getGameInfos } from '@/lib/games'
+import { type GameInfo, getCompanies, getGameInfos, getSystems } from '@/lib/games'
 
 export default function GamesTable() {
-  const [systemsText, setSystemsText] = useState('')
-  const [companiesText, setCompaniesText] = useState('')
+  const [system, setSystem] = useState('')
+  const [company, setCompany] = useState('')
   const [includeDevelopers, setIncludeDevelopers] = useState(true)
   const [includePublishers, setIncludePublishers] = useState(true)
   const [sort, setSort] = useState('default')
 
   const allGames = Object.entries(getGameInfos())
+  const allSystems = getSystems()
+  const allCompanies = getCompanies()
+
   let games = allGames
 
   // TODO: these searches should probably not be case-sensitive
-  const systems = systemsText.split(',').map(it => it.trim()).filter(it => it)
-  if (systems.length) {
-    games = games.filter(it => it[1].system.value.some(system => systems.includes(system)))
+  if (system) {
+    games = games.filter(it => it[1].system.value.includes(system))
   }
 
-  const companies = companiesText.split(',').map(it => it.trim()).filter(it => it)
-  if (companies.length) {
+  if (company) {
     games = games.filter(it => {
       let gameCompanies: string[] = []
       if (includeDevelopers) gameCompanies = gameCompanies.concat(it[1].developer.value)
       if (includePublishers) gameCompanies = gameCompanies.concat(it[1].publisher.value)
-      return gameCompanies.some(company => companies.includes(company))
+      return gameCompanies.includes(company)
     })
   }
 
@@ -41,11 +42,17 @@ export default function GamesTable() {
   return (
     <div>
       <form className="my-4 w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content,_auto] gap-2">
-        <label className="font-bold">Systems:</label>
-        <input className="bg-tertiary border-b-[1px]" type="text" value={systemsText} onChange={e => setSystemsText(e.target.value)} />
+        <label className="font-bold">System:</label>
+        <select className="bg-tertiary" value={system} onChange={e => setSystem(e.target.value)}>
+          <option value="">All</option>
+          {allSystems.map(it => <option key={it} value={it}>{it}</option>)}
+        </select>
 
-        <label className="font-bold">Companies:</label>
-        <input className="bg-tertiary border-b-[1px]" type="text" value={companiesText} onChange={e => setCompaniesText(e.target.value)} />
+        <label className="font-bold">Company:</label>
+        <select className="bg-tertiary" value={company} onChange={e => setCompany(e.target.value)}>
+          <option value="">All</option>
+          {allCompanies.map(it => <option key={it} value={it}>{it}</option>)}
+        </select>
 
         <div className="col-span-2 text-center child:m-1">
           <input type="checkbox" checked={includeDevelopers} onChange={e => setIncludeDevelopers(e.target.checked)} />
@@ -56,7 +63,7 @@ export default function GamesTable() {
         </div>
 
         <label className="font-bold">Sort:</label>
-        <select className="bg-tertiary justify-self-end" value={sort} onChange={e => setSort(e.target.value)}>
+        <select className="bg-tertiary" value={sort} onChange={e => setSort(e.target.value)}>
           <option value="default">Default</option>
           <option value="year">Year</option>
         </select>
