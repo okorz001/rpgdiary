@@ -44,22 +44,22 @@ export default function GamesTable() {
       <form className="my-4 w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content,_auto] gap-2">
         <label className="font-bold">System:</label>
         <select className="bg-tertiary" value={system} onChange={e => setSystem(e.target.value)}>
-          <option value="">All</option>
+          <option value="">Any</option>
           {allSystems.map(it => <option key={it} value={it}>{it}</option>)}
         </select>
 
         <label className="font-bold">Company:</label>
         <select className="bg-tertiary" value={company} onChange={e => setCompany(e.target.value)}>
-          <option value="">All</option>
+          <option value="">Any</option>
           {allCompanies.map(it => <option key={it} value={it}>{it}</option>)}
         </select>
 
         <div className="col-span-2 text-center child:m-1">
           <input type="checkbox" checked={includeDevelopers} onChange={e => setIncludeDevelopers(e.target.checked)} />
-          <label className="font-bold">Developers</label>
+          <label className="font-bold">Developer</label>
 
           <input type="checkbox" checked={includePublishers} onChange={e => setIncludePublishers(e.target.checked)} />
-          <label className="font-bold">Publishers</label>
+          <label className="font-bold">Publisher</label>
         </div>
 
         <label className="font-bold">Sort:</label>
