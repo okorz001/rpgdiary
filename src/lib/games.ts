@@ -94,6 +94,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_iii', date: '2022-06-21' },
   { slug: 'dragon_quest_iv', date: '2023-09-23' },
   { slug: 'final_fantasy_xii', date: '2023-04-02' },
+  { slug: 'dragon_quest_xi_s', date: '2024-04-20' },
   { slug: 'pokemon_scarlet_and_violet', date: '2023-01-24' },
   { slug: 'dragon_quest_v', date: '2023-10-01' },
   { slug: 'dragon_quest_vi', date: '2023-10-17' },
@@ -214,6 +215,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_ix/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'dragon_quest_ix/cover-jp.jpg' },
+    ],
+  },
+
+  dragon_quest_xi_s: {
+    title: { value: ['Dragon Quest\xA0XI\xA0S'] },
+    year: { value: 2019, notes: { Original: 2017 } },
+    system: { value: ['NS', 'PS4', 'XB1', 'WIN'] },
+    developer: { value: ['Square Enix'] },
+    publisher: { value: ['Square Enix'] },
+    covers: [
+      { caption: 'Switch Cover', image: 'dragon_quest_xi_s/cover-switch.jpg' },
+      { caption: 'PS4 Cover', image: 'dragon_quest_xi_s/cover-ps4.png' },
     ],
   },
 
