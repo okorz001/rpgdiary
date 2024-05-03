@@ -186,7 +186,7 @@ const GAMES: Record<string, GameInfo> = {
     title: { value: ['Dragon Quest\xA0VII'], notes: { US: ['Dragon Warrior\xA0VII'] } },
     year: { value: 2000, notes: { US: 2001 } },
     system: { value: ['PSX'] },
-    developer: { value: ['Heart Beat', 'ArtePiazza'] },
+    developer: { value: ['Heart Beat'] },
     publisher: { value: ['Enix'] },
     covers: [
       { caption: 'US Cover', image: 'dragon_quest_vii/cover-us.jpg' },
@@ -387,7 +387,7 @@ const GAMES: Record<string, GameInfo> = {
     title: { value: ['Final Fantasy\xA0XIII-2'] },
     year: { value: 2011, notes: { US: 2012 } },
     system: { value: ['PS3', '360'] },
-    developer: { value: ['Square Enix', 'tri-Ace'] },
+    developer: { value: ['Square Enix'] },
     publisher: { value: ['Square Enix'] },
     covers: [
       { caption: 'US Cover', image: 'final_fantasy_xiii_2/cover-us.png' },
@@ -399,7 +399,7 @@ const GAMES: Record<string, GameInfo> = {
     title: { value: ['Lightning Returns'] },
     year: { value: 2013, notes: { US: 2014 } },
     system: { value: ['PS3', '360'] },
-    developer: { value: ['Square Enix', 'tri-Ace'] },
+    developer: { value: ['Square Enix'] },
     publisher: { value: ['Square Enix'] },
     covers: [
       { caption: 'US Cover', image: 'lightning_returns/cover-us.jpg' },
