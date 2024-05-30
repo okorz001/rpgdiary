@@ -81,6 +81,7 @@ export function getCompanies(): string[] {
 // this avoids I/O and parsing plus it leverages TS type checking
 
 const RANKING: GameRanking[] = [
+  { slug: 'chrono_trigger', date: '2024-05-26' },
   { slug: 'final_fantasy_v', date: '2022-07-14' },
   { slug: 'final_fantasy_x', date: '2023-01-11' },
   { slug: 'final_fantasy_ix', date: '2022-12-18' },
@@ -112,6 +113,18 @@ const RANKING: GameRanking[] = [
 ]
 
 const GAMES: Record<string, GameInfo> = {
+  chrono_trigger: {
+    title: { value: ['Chrono Trigger'] },
+    year: { value: 1995 },
+    system: { value: ['SNES'] },
+    developer: { value: ['Square'] },
+    publisher: { value: ['Square'] },
+    covers: [
+      { caption: 'US Cover', image: 'chrono_trigger/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'chrono_trigger/cover-jp.jpg' },
+    ],
+  },
+
   dragon_quest: {
     title: { value: ['Dragon Quest'], notes: { US: ['Dragon Warrior'] } },
     year: { value: 1986, notes: { US: 1989 } },
