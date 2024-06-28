@@ -102,6 +102,7 @@ const RANKING: GameRanking[] = [
   { slug: 'dragon_quest_iii', date: '2023-09-12' },
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
+  { slug: 'chrono_cross', date: '2024-06-25' },
   { slug: 'final_fantasy_ii', date: '2022-06-14' },
   { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
@@ -122,6 +123,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'chrono_trigger/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'chrono_trigger/cover-jp.jpg' },
+    ],
+  },
+
+  chrono_cross: {
+    title: { value: ['Chrono Cross'] },
+    year: { value: 1999, notes: { US: 2000 } },
+    system: { value: ['PSX'] },
+    developer: { value: ['Square'] },
+    publisher: { value: ['Square'] },
+    covers: [
+      { caption: 'US Cover', image: 'chrono_cross/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'chrono_cross/cover-jp.jpg' },
     ],
   },
 
