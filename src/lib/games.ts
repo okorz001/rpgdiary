@@ -457,6 +457,18 @@ const GAMES: Record<string, GameInfo> = {
     ],
   },
 
+  phantasy_star: {
+    title: { value: ['Phantasy Star'] },
+    year: { value: 1987, notes: { US: 1988 } },
+    system: { value: ['SMS'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star/cover-jp.jpg' },
+    ],
+  },
+
   pokemon_scarlet_and_violet: {
     name: 'Pokemon Scarlet and Violet',
     title: { value: ['Pokemon Scarlet', 'Pokemon Violet'] },
