@@ -104,6 +104,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
   { slug: 'chrono_cross', date: '2024-06-25' },
   { slug: 'final_fantasy_ii', date: '2022-06-14' },
+  { slug: 'phantasy_star', date: '2024-07-04' },
   { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
   { slug: 'dragon_quest_vii', date: '2023-11-29' },
@@ -454,6 +455,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'final_fantasy_xvi/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'final_fantasy_xvi/cover-jp.jpg' },
+    ],
+  },
+
+  phantasy_star: {
+    title: { value: ['Phantasy Star'] },
+    year: { value: 1987, notes: { US: 1988 } },
+    system: { value: ['SMS'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star/cover-jp.jpg' },
     ],
   },
 
