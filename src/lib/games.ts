@@ -6,6 +6,7 @@ export type GameInfo = {
   name?: string
   title: Annotated<string[]>
   year: Annotated<number>
+  unreleased?: string[]
   system: Annotated<string[]>
   developer: Annotated<string[]>
   publisher: Annotated<string[]>
@@ -191,6 +192,7 @@ const GAMES: Record<string, GameInfo> = {
   dragon_quest_v: {
     title: { value: ['Dragon Quest\xA0V'] },
     year: { value: 1992 },
+    unreleased: ['US'],
     system: { value: ['SNES'] },
     developer: { value: ['Chunsoft'] },
     publisher: { value: ['Enix'] },
@@ -202,6 +204,7 @@ const GAMES: Record<string, GameInfo> = {
   dragon_quest_vi: {
     title: { value: ['Dragon Quest\xA0VI'] },
     year: { value: 1995 },
+    unreleased: ['US'],
     system: { value: ['SNES'] },
     developer: { value: ['Heart Beat'] },
     publisher: { value: ['Enix'] },
@@ -273,6 +276,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_ii: {
     title: { value: ['Final Fantasy\xA0II'] },
     year: { value: 1988 },
+    unreleased: ['US'],
     system: { value: ['NES'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'] },
@@ -284,6 +288,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_iii: {
     title: { value: ['Final Fantasy\xA0III'] },
     year: { value: 1990 },
+    unreleased: ['US'],
     system: { value: ['NES'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'] },
@@ -307,6 +312,7 @@ const GAMES: Record<string, GameInfo> = {
   final_fantasy_v: {
     title: { value: ['Final Fantasy\xA0V'] },
     year: { value: 1992 },
+    unreleased: ['US'],
     system: { value: ['SNES'] },
     developer: { value: ['Square'] },
     publisher: { value: ['Square'] },

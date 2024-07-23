@@ -10,6 +10,7 @@ export default function GamesTable() {
   const [company, setCompany] = useState('')
   const [includeDevelopers, setIncludeDevelopers] = useState(true)
   const [includePublishers, setIncludePublishers] = useState(true)
+  const [release, setRelease] = useState('first')
   const [sort, setSort] = useState('default')
 
   const allGames = Object.entries(getGameInfos())
@@ -32,10 +33,15 @@ export default function GamesTable() {
     })
   }
 
+  // hide unreleased games if necessary
+  if (release === 'US') {
+    games = games.filter(it => !(it[1].unreleased || []).includes(release))
+  }
+
   // default sort is no-op
   if (sort === 'year') {
     games.sort((a, b) => {
-      return a[1].year.value - b[1].year.value
+      return getRelease(a[1], release) - getRelease(b[1], release)
     })
   }
 
@@ -62,6 +68,13 @@ export default function GamesTable() {
           <label className="font-bold">Publisher</label>
         </div>
 
+        <label className="font-bold">Release:</label>
+        <select className="bg-tertiary" value={release} onChange={e => setRelease(e.target.value)}>
+          <option value="first">First</option>
+          <option value="US">US</option>
+          <option value="Original">Original</option>
+        </select>
+
         <label className="font-bold">Sort:</label>
         <select className="bg-tertiary" value={sort} onChange={e => setSort(e.target.value)}>
           <option value="default">Default</option>
@@ -80,18 +93,22 @@ export default function GamesTable() {
           </tr>
         </thead>
         <tbody>
-          {games.map(([slug, game]) => createGameRow(slug, game))}
+          {games.map(([slug, game]) => createGameRow(slug, game, release))}
         </tbody>
       </table>
     </div>
   )
 }
 
-function createGameRow(slug: string, game: GameInfo) {
+function getRelease(game: GameInfo, release: string) {
+  return (game.year.notes || {})[release] || game.year.value
+}
+
+function createGameRow(slug: string, game: GameInfo, release: string) {
   return (
     <tr key={slug} className="align-top odd:bg-black/10 child:p-4">
       <td><GameLink slug={slug}>{createList(game.title.value)}</GameLink></td>
-      <td>{game.year.value}</td>
+      <td>{getRelease(game, release)}</td>
       <td className="max-[380px]:hidden">{createList(game.system.value)}</td>
       <td className="max-[525px]:hidden">{createList(game.developer.value)}</td>
       <td className="max-[625px]:hidden">{createList(game.publisher.value)}</td>
