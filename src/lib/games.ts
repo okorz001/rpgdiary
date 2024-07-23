@@ -478,7 +478,7 @@ const GAMES: Record<string, GameInfo> = {
   },
 
   phantasy_star_ii: {
-    title: { value: ['Phantasy Star II'] },
+    title: { value: ['Phantasy Star\xA0II'] },
     year: { value: 1989, notes: { US: 1990 } },
     system: { value: ['GEN'] },
     developer: { value: ['Sega'] },
