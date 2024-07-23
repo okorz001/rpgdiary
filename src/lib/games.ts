@@ -489,6 +489,18 @@ const GAMES: Record<string, GameInfo> = {
     ],
   },
 
+  phantasy_star_iii: {
+    title: { value: ['Phantasy Star\xA0III'] },
+    year: { value: 1990, notes: { US: 1991 } },
+    system: { value: ['GEN'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star_iii/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star_iii/cover-jp.jpg' },
+    ],
+  },
+
   pokemon_scarlet_and_violet: {
     name: 'Pokemon Scarlet and Violet',
     title: { value: ['Pokemon Scarlet', 'Pokemon Violet'] },
