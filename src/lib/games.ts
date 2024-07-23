@@ -111,6 +111,7 @@ const RANKING: GameRanking[] = [
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
   { slug: 'dragon_quest_ix', date: '2024-03-23' },
+  { slug: 'phantasy_star_ii', date: '2024-07-22' },
   { slug: 'dragon_quest', date: '2023-08-21' },
 ]
 
@@ -467,6 +468,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'phantasy_star/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'phantasy_star/cover-jp.jpg' },
+    ],
+  },
+
+  phantasy_star_ii: {
+    title: { value: ['Phantasy Star II'] },
+    year: { value: 1989, notes: { US: 1990 } },
+    system: { value: ['GEN'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star_ii/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star_ii/cover-jp.jpg' },
     ],
   },
 
