@@ -108,6 +108,7 @@ const RANKING: GameRanking[] = [
   { slug: 'phantasy_star', date: '2024-07-04' },
   { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
+  { slug: 'phantasy_star_iii', date: '2024-08-12' },
   { slug: 'dragon_quest_vii', date: '2023-11-29' },
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
@@ -486,6 +487,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'phantasy_star_ii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'phantasy_star_ii/cover-jp.jpg' },
+    ],
+  },
+
+  phantasy_star_iii: {
+    title: { value: ['Phantasy Star\xA0III'] },
+    year: { value: 1990, notes: { US: 1991 } },
+    system: { value: ['GEN'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star_iii/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star_iii/cover-jp.jpg' },
     ],
   },
 
