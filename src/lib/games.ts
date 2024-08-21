@@ -467,6 +467,17 @@ const GAMES: Record<string, GameInfo> = {
     ],
   },
 
+  mother: {
+    title: { value: ['Mother'], notes: { US: ['EarthBound Beginnings'] } },
+    year: { value: 1989, notes: { US: 2015 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Ape'] },
+    publisher: { value: ['Nintendo'] },
+    covers: [
+      { caption: 'Japan Cover', image: 'mother/cover-jp.png' },
+    ],
+  },
+
   phantasy_star: {
     title: { value: ['Phantasy Star'] },
     year: { value: 1987, notes: { US: 1988 } },
