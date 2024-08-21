@@ -119,6 +119,18 @@ const RANKING: GameRanking[] = [
 ]
 
 const GAMES: Record<string, GameInfo> = {
+  breath_of_fire: {
+    title: { value: ['Breath of Fire'] },
+    year: { value: 1993, notes: { US: 1994 } },
+    system: { value: ['SNES'] },
+    developer: { value: ['Capcom'] },
+    publisher: { value: ['Capcom'], notes: { US: ['Square'] } },
+    covers: [
+      { caption: 'US Cover', image: 'breath_of_fire/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'breath_of_fire/cover-jp.jpg' },
+    ],
+  },
+
   chrono_trigger: {
     title: { value: ['Chrono Trigger'] },
     year: { value: 1995 },
