@@ -89,6 +89,7 @@ const RANKING: GameRanking[] = [
   { slug: 'final_fantasy_vii', date: '2022-10-14' },
   { slug: 'final_fantasy_xv', date: '2023-08-10' },
   { slug: 'dragon_quest_viii', date: '2024-02-10' },
+  { slug: 'phantasy_star_iv', date: '2024-08-19' },
   { slug: 'final_fantasy_vi', date: '2022-09-02' },
   { slug: 'final_fantasy_xiii_2', date: '2023-06-03' },
   { slug: 'final_fantasy_iv', date: '2022-06-27' },
@@ -499,6 +500,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'phantasy_star_iii/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'phantasy_star_iii/cover-jp.jpg' },
+    ],
+  },
+
+  phantasy_star_iv: {
+    title: { value: ['Phantasy Star\xA0IV'] },
+    year: { value: 1993, notes: { US: 1995 } },
+    system: { value: ['GEN'] },
+    developer: { value: ['Sega'] },
+    publisher: { value: ['Sega'] },
+    covers: [
+      { caption: 'US Cover', image: 'phantasy_star_iv/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'phantasy_star_iv/cover-jp.jpg' },
     ],
   },
 
