@@ -474,6 +474,7 @@ const GAMES: Record<string, GameInfo> = {
     developer: { value: ['Ape'] },
     publisher: { value: ['Nintendo'] },
     covers: [
+      { caption: 'US Cover (NSO)', image: 'mother/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'mother/cover-jp.png' },
     ],
   },
