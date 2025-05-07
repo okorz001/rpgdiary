@@ -47,7 +47,7 @@ export default function GameRanking(props: GameRankingProps) {
   return (
     <div className="w-fit mx-auto my-4 p-2 rounded-xl bg-tertiary">
       <div className="text-center text-lg font-bold">Most Enjoyed</div>
-      <ol className={`list-outside ${padding} child:my-1.5`} start={start + (moreBefore ? -1 : 0)}>
+      <ol className={`list-outside ${padding} *:my-1.5`} start={start + (moreBefore ? -1 : 0)}>
         {moreBefore && <li>.&nbsp;.&nbsp;.</li>}
         {ranking.map(it => createItem(it, props.game))}
         {moreAfter && <li>.&nbsp;.&nbsp;.</li>}

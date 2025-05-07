@@ -19,7 +19,7 @@ export default function Figure(props: FigureProps) {
           loading="lazy"
           src={`/images/${props.image}/figure.webp`}
           alt={props.alt}
-          className="max-w-figure max-h-figure mx-auto"
+          className="max-w-[200px] max-h-[200px] mx-auto"
         />
         <figcaption className="mt-1 -mb-1 text-center text-sm">{props.children}</figcaption>
       </figure>

@@ -55,7 +55,7 @@ export type GameArticleProps = {
   game: GameInfo
 }
 
-export type GameArticle = (props: GameArticleProps) => ReactElement
+export type GameArticle = (props: GameArticleProps) => ReactElement<GameArticleProps>
 
 export function getGameArticle(slug: string): GameArticle {
   return articles[slug] || (() => { throw new Error(`No article for slug: ${slug}`) })

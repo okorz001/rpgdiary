@@ -20,7 +20,7 @@ export default function PageNav(props: PageNavProps) {
   const nav = (
     <nav className={`
       sticky bottom-0 px-2 py-2 bg-inherit
-      grid grid-cols-pageNav justify-center items-center
+      grid grid-cols-[2.5rem_2.5rem_minmax(min-content,_max-content)_2.5rem_2.5rem] justify-center items-center
     `}>
       {createLink(1, '<<')}
       {createLink(page - 1, '<')}

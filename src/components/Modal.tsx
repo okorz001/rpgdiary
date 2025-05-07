@@ -19,7 +19,7 @@ export default function Modal({ onClick, children }: ModalProps) {
   })
 
   const modal = (
-    <div onClick={onClick} className="cursor-pointer z-modal fixed top-0 w-full h-full bg-black/60">
+    <div onClick={onClick} className="cursor-pointer z-1 fixed top-0 w-full h-full bg-black/60">
       {children}
     </div>
   )

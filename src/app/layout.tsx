@@ -46,13 +46,13 @@ export default function RootLayout(props: PropsWithChildren) {
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className={`
-        w-full min-w-body min-h-full grid grid-rows-layout
+        w-full min-w-[280px] min-h-full grid grid-rows-[max-content_1fr_max-content]
         bg-background text-text/80 font-sans ${fontClasses}
       `}>
         <NavBar />
-        <main className="w-full max-w-main mx-auto bg-paper divide-y divide-text/20">
+        <main className="w-full max-w-[768px] mx-auto bg-paper divide-y divide-text/20">
           {props.children}
-          <footer className="w-full max-w-main mx-auto text-sm text-center p-2">
+          <footer className="w-full max-w-[768px] mx-auto text-sm text-center p-2">
             &copy;2022-{new Date().getFullYear()} Oscar Korz &mdash; All rights reserved
           </footer>
         </main>

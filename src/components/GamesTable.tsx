@@ -47,7 +47,7 @@ export default function GamesTable() {
 
   return (
     <div>
-      <form className="my-4 w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content,_auto] gap-2">
+      <form className="my-4 w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content__auto] gap-2">
         <label className="font-bold">System:</label>
         <select className="bg-tertiary" value={system} onChange={e => setSystem(e.target.value)}>
           <option value="">Any</option>
@@ -60,7 +60,7 @@ export default function GamesTable() {
           {allCompanies.map(it => <option key={it} value={it}>{it}</option>)}
         </select>
 
-        <div className="col-span-2 text-center child:m-1">
+        <div className="col-span-2 text-center *:m-1">
           <input type="checkbox" checked={includeDevelopers} onChange={e => setIncludeDevelopers(e.target.checked)} />
           <label className="font-bold">Developer</label>
 
@@ -84,7 +84,7 @@ export default function GamesTable() {
       
       <table className="w-fit mx-auto text-nowrap">
         <thead>
-          <tr className="child:p-4">
+          <tr className="*:p-4">
             <th>Name</th>
             <th>Year</th>
             <th className="max-[380px]:hidden">System</th>
@@ -106,7 +106,7 @@ function getRelease(game: GameInfo, release: string) {
 
 function createGameRow(slug: string, game: GameInfo, release: string) {
   return (
-    <tr key={slug} className="align-top odd:bg-black/10 child:p-4">
+    <tr key={slug} className="align-top odd:bg-black/10 *:p-4">
       <td><GameLink slug={slug}>{createList(game.title.value)}</GameLink></td>
       <td>{getRelease(game, release)}</td>
       <td className="max-[380px]:hidden">{createList(game.system.value)}</td>

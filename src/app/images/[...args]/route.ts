@@ -65,7 +65,8 @@ function getExtraImageParams() {
   })
 }
 
-export async function GET(_, { params }) {
+export async function GET(_, props) {
+  const params = await props.params;
   const args = parseArgs(params.args)
   const file = path.resolve(IMAGES_DIR, args.path)
 

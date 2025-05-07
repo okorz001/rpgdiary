@@ -12,11 +12,6 @@ type PageParams = {
   page: string
 }
 
-// TODO: Does Next define a type for this?
-type PageContext = {
-  params: PageParams
-}
-
 export function generateStaticParams(): PageParams[] {
   const slugs = getGameSlugs()
   // generate a path for every page EXCEPT 1. "/" is used instead of "/pages/1"
@@ -25,14 +20,16 @@ export function generateStaticParams(): PageParams[] {
     .map(page => ({ page: page.toString() }))
 }
 
-export function generateMetadata({ params }: PageContext) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   return {
     // override the template from the layout
     title: { absolute: `RPG Diary (Page ${params.page})` },
   } as Metadata
 }
 
-export default function LatestPage({ params }: PageContext) {
+export default async function LatestPage(props) {
+  const params = await props.params;
   let ranking = getGameRanking()
   const numPages = getNumPages(ranking)
 

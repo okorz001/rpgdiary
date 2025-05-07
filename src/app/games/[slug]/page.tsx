@@ -6,16 +6,12 @@ type PageParams = {
   slug: string
 }
 
-// TODO: Does Next define a type for this?
-type PageContext = {
-  params: PageParams
-}
-
 export function generateStaticParams(): PageParams[] {
   return getGameSlugs().map(slug => ({ slug }))
 }
 
-export function generateMetadata({ params }: PageContext): Metadata {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
   const game = getGameInfo(params.slug)
   const title = getGameName(game)
   return {
@@ -24,7 +20,8 @@ export function generateMetadata({ params }: PageContext): Metadata {
   }
 }
 
-export default function GamePage({ params }: PageContext) {
+export default async function GamePage(props) {
+  const params = await props.params;
   const { slug } = params
   const game = getGameInfo(slug)
   const title = getGameName(game)
