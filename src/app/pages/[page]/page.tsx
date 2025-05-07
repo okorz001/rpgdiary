@@ -43,7 +43,7 @@ export default async function LatestPage(props) {
   const end = Math.min(start + PAGE_SIZE, ranking.length)
   ranking = ranking.slice(start, end)
 
-  const articles = ranking.map(({ slug }) => <GamePage key={slug} params={{ slug }} />)
+  const articles = ranking.map(({ slug }) => GamePage({ key: slug, params: { slug } }))
 
   return (
     <>
