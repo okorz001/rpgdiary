@@ -9,22 +9,19 @@ export type PageNavProps = {
 export default function PageNav(props: PageNavProps) {
   const { page, count, getHref } = props
   const createLink = (to: number, label: string) => {
-    let inner = <></>
+    let inner: JSX.Element
     if (to >= 1 && to <= count && to != page) {
       inner = <Link href={getHref(to)}>{label}</Link>
     } else {
       inner = <span className="text-text/30">{label}</span>
     }
-    return <div className="text-center text-xl -my-1">{inner}</div>
+    return <div className="text-xl -my-1">{inner}</div>
   }
   const nav = (
-    <nav className={`
-      sticky bottom-0 px-2 py-2 bg-inherit
-      grid grid-cols-[2.5rem_2.5rem_minmax(min-content,_max-content)_2.5rem_2.5rem] justify-center items-center
-    `}>
+    <nav className="sticky bottom-0 p-2 bg-inherit flex justify-center *:px-2 *:text-nowrap">
       {createLink(1, '<<')}
       {createLink(page - 1, '<')}
-      <div className="px-2 text-sm">Page {page} of {count}</div>
+      <div className="text-sm">Page {page} of {count}</div>
       {createLink(page + 1, '>')}
       {createLink(count, '>>')}
     </nav>
