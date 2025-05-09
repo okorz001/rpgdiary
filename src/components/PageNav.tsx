@@ -1,13 +1,14 @@
 import Link from '@/components/Link'
 
 export type PageNavProps = {
+  className?: string
   page: number
   count: number
   getHref: (page: number) => string,
 }
 
 export default function PageNav(props: PageNavProps) {
-  const { page, count, getHref } = props
+  const { className, page, count, getHref } = props
   const createLink = (to: number, label: string) => {
     let inner: JSX.Element
     if (to >= 1 && to <= count && to != page) {
@@ -18,7 +19,7 @@ export default function PageNav(props: PageNavProps) {
     return <div className="text-xl -my-1">{inner}</div>
   }
   const nav = (
-    <nav className="sticky bottom-0 p-2 bg-inherit flex justify-center *:px-2 *:text-nowrap">
+    <nav className={`p-2 flex justify-center *:px-2 *:text-nowrap ${className}`}>
       {createLink(1, '<<')}
       {createLink(page - 1, '<')}
       <div className="text-sm">Page {page} of {count}</div>

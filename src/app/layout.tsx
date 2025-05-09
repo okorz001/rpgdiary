@@ -36,7 +36,7 @@ const fontClasses = fonts.map(it => it.variable).join(' ')
 
 export default function RootLayout(props: PropsWithChildren) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className={`h-full font-sans ${fontClasses}`}>
       <head>
         <link rel="icon" href="/images/favicon.svg/raw.svg" type="image/svg+xml" sizes="any" />
         <link rel="icon" href="/images/favicon.svg/favicon48.png" type="image/png" sizes="48x48" />
@@ -45,17 +45,12 @@ export default function RootLayout(props: PropsWithChildren) {
         <link rel="apple-touch-icon" href="/images/icon.svg/appleTouchIcon.png" />
         <meta name="color-scheme" content="dark light" />
       </head>
-      <body className={`
-        w-full min-w-[280px] min-h-full grid grid-rows-[max-content_1fr_max-content]
-        bg-background text-text/80 font-sans ${fontClasses}
-      `}>
+      <body className="w-full min-w-[280px] min-h-full flex flex-col items-center bg-background text-text/80">
         <NavBar />
-        <main className="w-full max-w-[768px] mx-auto bg-paper divide-y divide-text/20">
-          {props.children}
-          <footer className="w-full max-w-[768px] mx-auto text-sm text-center p-2">
-            &copy;2022-{new Date().getFullYear()} Oscar Korz &mdash; All rights reserved
-          </footer>
-        </main>
+        <main className="flex-1 w-full max-w-[768px] flex">{props.children}</main>
+        <footer className="text-sm text-center p-2">
+          &copy;2022-{new Date().getFullYear()} Oscar Korz &mdash; All rights reserved
+        </footer>
       </body>
     </html>
   )

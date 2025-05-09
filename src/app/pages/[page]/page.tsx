@@ -4,6 +4,7 @@ import { type Metadata } from 'next'
 
 import GamePage from '@/app/games/[slug]/page'
 import PageNav from '@/components/PageNav'
+import Paper from '@/components/Paper'
 import { getGameRanking, getGameSlugs } from '@/lib/games'
 
 const PAGE_SIZE = 5
@@ -43,13 +44,16 @@ export default async function LatestPage(props) {
   const end = Math.min(start + PAGE_SIZE, ranking.length)
   ranking = ranking.slice(start, end)
 
-  const articles = ranking.map(({ slug }) => GamePage({ key: slug, params: { slug } }))
+  const articles = ranking.map(({ slug }) => (
+    <Paper>{GamePage({ key: slug, params: { slug } })}</Paper>
+  ))
 
   return (
-    <>
+    <div className="my-1 flex flex-col gap-1">
+      <Paper><PageNav page={page} count={numPages} getHref={getHref} /></Paper>
       {articles}
-      <PageNav page={page} count={numPages} getHref={getHref} />
-    </>
+      <Paper><PageNav page={page} count={numPages} getHref={getHref} /></Paper>
+    </div>
   )
 }
 
