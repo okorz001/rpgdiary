@@ -40,20 +40,18 @@ export default function RootLayout(props: PropsWithChildren) {
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className="w-full min-w-[280px] min-h-full flex flex-col items-center bg-background text-text/80">
-        <header className="sticky top-0 w-full drop-shadow-xl flex justify-center bg-primary text-primaryContrast">
+        <header className="sticky top-0 w-full flex justify-center bg-primary text-primaryContrast">
           <div className="flex-1 max-w-[768px] flex flex-col min-[425px]:flex-row justify-between items-center px-2 py-1.5">
             <NextLink href="/" className="-mt-0.5 mb-0.5 flex gap-1 items-end">
               <img width="32" height="32" src="/images/icon.svg/raw.svg" alt="RPG Diary icon" />
               <h1 className="text-3xl font-serif text-nowrap">RPG Diary</h1>
             </NextLink>
             <nav className="flex gap-4 font-bold text-sm min-[425px]:text-base uppercase">
-              {links.map(({label, href}) => (
-                <NextLink key={label} href={href} className="">{label}</NextLink>
-              ))}
+              {links.map(it => <NextLink key={it.label} href={it.href}>{it.label}</NextLink>)}
             </nav>
           </div>
         </header>
-        <main className="flex-1 w-full max-w-[768px] flex">{props.children}</main>
+        <main className="flex-1 w-full max-w-[768px] flex flex-col py-2 gap-2">{props.children}</main>
         <footer className="text-sm text-center p-2">
           &copy;2022-{new Date().getFullYear()} Oscar Korz &mdash; All rights reserved
         </footer>

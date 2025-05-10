@@ -22,7 +22,7 @@ export function generateStaticParams(): PageParams[] {
 }
 
 export async function generateMetadata(props) {
-  const params = await props.params;
+  const params = await props.params
   return {
     // override the template from the layout
     title: { absolute: `RPG Diary (Page ${params.page})` },
@@ -30,7 +30,7 @@ export async function generateMetadata(props) {
 }
 
 export default async function LatestPage(props) {
-  const params = await props.params;
+  const params = await props.params
   let ranking = getGameRanking()
   const numPages = getNumPages(ranking)
 
@@ -44,16 +44,12 @@ export default async function LatestPage(props) {
   const end = Math.min(start + PAGE_SIZE, ranking.length)
   ranking = ranking.slice(start, end)
 
-  const articles = ranking.map(({ slug }) => (
-    <Paper>{GamePage({ key: slug, params: { slug } })}</Paper>
-  ))
-
   return (
-    <div className="my-1 flex flex-col gap-1">
+    <>
       <Paper><PageNav page={page} count={numPages} getHref={getHref} /></Paper>
-      {articles}
+      {ranking.map(({ slug }) => <Paper>{GamePage({ key: slug, params: { slug } })}</Paper>)}
       <Paper><PageNav page={page} count={numPages} getHref={getHref} /></Paper>
-    </div>
+    </>
   )
 }
 
