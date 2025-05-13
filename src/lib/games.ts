@@ -110,6 +110,7 @@ const RANKING: GameRanking[] = [
   { slug: 'dragon_quest_ii', date: '2023-08-28' },
   { slug: 'final_fantasy', date: '2022-06-03' },
   { slug: 'phantasy_star_iii', date: '2024-08-12' },
+  { slug: 'mother', date: '2025-05-10' },
   { slug: 'dragon_quest_vii', date: '2023-11-29' },
   { slug: 'lightning_returns', date: '2023-07-10' },
   { slug: 'final_fantasy_x_2', date: '2023-02-12' },
@@ -464,6 +465,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover', image: 'final_fantasy_xvi/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'final_fantasy_xvi/cover-jp.jpg' },
+    ],
+  },
+
+  mother: {
+    title: { value: ['Mother'], notes: { US: ['EarthBound Beginnings'] } },
+    year: { value: 1989, notes: { US: 2015 } },
+    system: { value: ['NES'] },
+    developer: { value: ['Ape'] },
+    publisher: { value: ['Nintendo'] },
+    covers: [
+      { caption: 'US Cover (NSO)', image: 'mother/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'mother/cover-jp.png' },
     ],
   },
 
