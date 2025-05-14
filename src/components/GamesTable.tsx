@@ -46,8 +46,8 @@ export default function GamesTable() {
   }
 
   return (
-    <div>
-      <form className="my-4 w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content__auto] gap-2">
+    <div className="my-4">
+      <form className="w-fit mx-auto rounded-xl bg-tertiary p-2 grid grid-cols-[max-content__auto] gap-2">
         <label className="font-bold">System:</label>
         <select className="bg-tertiary" value={system} onChange={e => setSystem(e.target.value)}>
           <option value="">Any</option>
