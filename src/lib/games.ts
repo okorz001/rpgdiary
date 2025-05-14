@@ -469,6 +469,7 @@ const GAMES: Record<string, GameInfo> = {
   },
 
   mother: {
+    name: 'Mother / EarthBound Beginnings',
     title: { value: ['Mother'], notes: { US: ['EarthBound Beginnings'] } },
     year: { value: 1989, notes: { US: 2015 } },
     system: { value: ['NES'] },
@@ -477,6 +478,19 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover (NSO)', image: 'mother/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'mother/cover-jp.png' },
+    ],
+  },
+
+  mother_2: {
+    name: 'Mother 2 / EarthBound',
+    title: { value: ['Mother 2'], notes: { US: ['EarthBound'] } },
+    year: { value: 1994, notes: { US: 1995 } },
+    system: { value: ['SNES'] },
+    developer: { value: ['Ape', 'HAL Laboratory'] },
+    publisher: { value: ['Nintendo'] },
+    covers: [
+      { caption: 'US Cover', image: 'mother_2/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'mother_2/cover-jp.jpg' },
     ],
   },
 
