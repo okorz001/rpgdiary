@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 
 import GamesTable from '@/components/GamesTable'
+import Paper from '@/components/Paper'
 
 export const metadata: Metadata = {
   title: 'Games',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function GamesPage() {
-  return <GamesTable />
+  return <Paper><GamesTable /></Paper>
 }

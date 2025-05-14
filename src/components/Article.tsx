@@ -1,4 +1,5 @@
 import { type PropsWithChildren } from '@/components'
+import Paper from '@/components/Paper'
 
 type ArticleProps = PropsWithChildren & {
   title: string
@@ -8,11 +9,13 @@ type ArticleProps = PropsWithChildren & {
 export default function Article(props: ArticleProps) {
   const date = props.date && renderDate(props.date)
   return (
-    <article className="px-2 py-2">
-      {date && <div className="mb-1 text-xs">{date}</div>}
-      <h2 className="text-3xl text-center font-serif">{props.title}</h2>
-      {props.children}
-    </article>
+    <Paper>
+      <article className="px-2 py-2">
+        {date && <div className="mb-1 text-xs">{date}</div>}
+        <h2 className="text-3xl text-center font-serif">{props.title}</h2>
+        {props.children}
+      </article>
+    </Paper>
   )
 }
 
