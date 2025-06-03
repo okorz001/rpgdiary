@@ -1,3 +1,4 @@
+import fromPairs from 'lodash/fromPairs'
 import range from 'lodash/range'
 import sortBy from 'lodash/sortBy'
 import { type Metadata } from 'next'
@@ -31,21 +32,22 @@ export async function generateMetadata(props) {
 
 export default async function LatestPage(props) {
   const params = await props.params
-  let ranking = getGameRanking()
-  const numPages = getNumPages(ranking)
+  let slugs = getGameSlugs()
+  const numPages = getNumPages(slugs)
 
-  // sort by date, newest first
-  ranking = sortBy(ranking, ['date'])
-  ranking.reverse()
+  // sort by date, newest first.
+  const slugDates = fromPairs(getGameRanking().map(it => [it.slug, it.date]))
+  slugs = sortBy(slugs, it => slugDates[it] || '9999') // missing dates newest
+  slugs.reverse()
 
   // slice page contents
   const page = +params.page
   const start = (page - 1) * PAGE_SIZE
-  const end = Math.min(start + PAGE_SIZE, ranking.length)
-  ranking = ranking.slice(start, end)
+  const end = Math.min(start + PAGE_SIZE, slugs.length)
+  slugs = slugs.slice(start, end)
 
   const nav = createNav(page, numPages)
-  const articles = ranking.map(({ slug }) => GamePage({ key: slug, params: { slug } }))
+  const articles = slugs.map(slug => GamePage({ key: slug, params: { slug } }))
   return <>{nav}{articles}{nav}</>
 }
 
