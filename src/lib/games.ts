@@ -101,6 +101,7 @@ const RANKING: GameRanking[] = [
   { slug: 'pokemon_scarlet_and_violet', date: '2023-01-24' },
   { slug: 'dragon_quest_v', date: '2023-10-01' },
   { slug: 'dragon_quest_vi', date: '2023-10-17' },
+  { slug: 'earthbound', date: '2025-06-01' },
   { slug: 'dragon_quest_iii', date: '2023-09-12' },
   { slug: 'final_fantasy_xiii', date: '2023-05-06' },
   { slug: 'final_fantasy_viii', date: '2022-11-11' },
@@ -469,6 +470,7 @@ const GAMES: Record<string, GameInfo> = {
   },
 
   mother: {
+    name: 'Mother / EarthBound Beginnings',
     title: { value: ['Mother'], notes: { US: ['EarthBound Beginnings'] } },
     year: { value: 1989, notes: { US: 2015 } },
     system: { value: ['NES'] },
@@ -477,6 +479,18 @@ const GAMES: Record<string, GameInfo> = {
     covers: [
       { caption: 'US Cover (NSO)', image: 'mother/cover-us.jpg' },
       { caption: 'Japan Cover', image: 'mother/cover-jp.png' },
+    ],
+  },
+
+  earthbound: {
+    title: { value: ['EarthBound'], notes: { JP: ['Mother 2'] } },
+    year: { value: 1994, notes: { US: 1995 } },
+    system: { value: ['SNES'] },
+    developer: { value: ['Ape', 'HAL Laboratory'] },
+    publisher: { value: ['Nintendo'] },
+    covers: [
+      { caption: 'US Cover', image: 'earthbound/cover-us.jpg' },
+      { caption: 'Japan Cover', image: 'earthbound/cover-jp.jpg' },
     ],
   },
 
