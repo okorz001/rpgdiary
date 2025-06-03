@@ -494,6 +494,18 @@ const GAMES: Record<string, GameInfo> = {
     ],
   },
 
+  mother_3: {
+    title: { value: ['Mother\xA03'] },
+    year: { value: 2006 },
+    unreleased: ['US'],
+    system: { value: ['GBA'] },
+    developer: { value: ['Brownie Brown', 'HAL Laboratory'] },
+    publisher: { value: ['Nintendo'] },
+    covers: [
+      { caption: 'Japan Cover', image: 'mother_3/cover-jp.jpg' },
+    ],
+  },
+
   phantasy_star: {
     title: { value: ['Phantasy Star'] },
     year: { value: 1987, notes: { US: 1988 } },
